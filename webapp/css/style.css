@@ -1,1 +1,105 @@
-/* Enter your custom styles here */
+.side-navigation {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	-webkit-box-direction: normal;
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+
+	max-width: 15rem;
+}
+
+.buttonODS1>.sapMBtnEmphasized {
+    background: #E5243B !important;
+    border: 1px solid #E5243B !important;
+}
+
+.buttonODS2>.sapMBtnEmphasized {
+    background: #DDA63A !important;
+    border: 1px solid #DDA63A !important;
+}
+
+.buttonODS3>.sapMBtnEmphasized {
+    background: #4C9F38 !important;
+    border: 1px solid #4C9F38 !important;
+}
+
+.buttonODS4>.sapMBtnEmphasized {
+    background: #C5192D !important;
+    border: 1px solid #C5192D !important;
+}
+
+.buttonODS5>.sapMBtnEmphasized {
+    background: #FF3A21 !important;
+    border: 1px solid #FF3A21 !important;
+}
+
+.buttonODS6>.sapMBtnEmphasized {
+    background: #26BDE2 !important;
+    border: 1px solid #26BDE2 !important;
+}
+
+.buttonODS7>.sapMBtnEmphasized {
+    background: #FCC30B !important;
+    border: 1px solid #FCC30B !important;
+}
+
+.buttonODS8>.sapMBtnEmphasized {
+    background: #A21942 !important;
+    border: 1px solid #A21942 !important;
+}
+
+.buttonODS9>.sapMBtnEmphasized {
+    background: #FD6925 !important;
+    border: 1px solid #FD6925 !important;
+}
+
+.buttonODS10>.sapMBtnEmphasized {
+    background: #DD1367 !important;
+    border: 1px solid #DD1367 !important;
+}
+
+.buttonODS11>.sapMBtnEmphasized {
+    background: #FD9D24 !important;
+    border: 1px solid #FD9D24 !important;
+}
+
+.buttonODS12>.sapMBtnEmphasized {
+    background: #BF8B2E !important;
+    border: 1px solid #BF8B2E !important;
+}
+
+.buttonODS13>.sapMBtnEmphasized {
+    background: #3F7E44 !important;
+    border: 1px solid #3F7E44 !important;
+}
+
+.buttonODS14>.sapMBtnEmphasized {
+    background: #0A97D9 !important;
+    border: 1px solid #0A97D9 !important;
+}
+
+.buttonODS15>.sapMBtnEmphasized {
+    background: #56C02B !important;
+    border: 1px solid #56C02B !important;
+}
+
+.buttonODS16>.sapMBtnEmphasized {
+    background: #00689D !important;
+    border: 1px solid #00689D !important;
+}
+
+.buttonODS17>.sapMBtnEmphasized {
+    background: #19486A !important;
+    border: 1px solid #19486A !important;
+}
+
+.card:hover{
+    -webkit-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    transform: scale(1.08);
+}

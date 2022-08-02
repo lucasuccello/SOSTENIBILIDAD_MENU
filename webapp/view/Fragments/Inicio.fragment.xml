@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:card="sap.f.cards" height="100%">
+	<VBox>
+        <Carousel loop="true" showPageIndicator="false" width="100%">
+            <Image src="{view>/rootPath}/images/homeImage_small.jpg" width="100%"/>
+        </Carousel>
+
+        <VBox width="100%">
+            <HBox justifyContent="Center" alignItems="Center" width="100%">
+                <Image src="{view>/rootPath}/images/icon_sustainability.png" width="500px"/>
+                <VBox>
+                    <Title text="{i18n>ini_titODS}" titleStyle="H1" wrapping="true"/>
+                    <Title text="{i18n>ini_subTit1ODS}" titleStyle="H2" wrapping="true"/>
+                    <Title text="{i18n>ini_subTit2ODS}" titleStyle="H2" class="sapUiSmallMarginBottom" wrapping="true"/>
+                    <Title text="{i18n>ini_descODS}" titleStyle="H4" wrapping="true"/>
+                    <HBox width="100%" wrap="Wrap" justifyContent="Center" class="sapUiSmallMarginTop">
+                        <Button type="Emphasized" enabled="false" class="buttonODS1 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD1}"/>
+                        <Button type="Emphasized" enabled="false" class="buttonODS2 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD2}"/>
+                        <Button type="Emphasized" enabled="false" class="buttonODS3 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD3}"/>
+                        <Button type="Emphasized" class="buttonODS4 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD4}" press="onNavODS4"/>
+                        <Button type="Emphasized" class="buttonODS5 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD5}"/>
+                        <Button type="Emphasized" enabled="false" class="buttonODS6 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD6}"/>
+                        <Button type="Emphasized" enabled="false" class="buttonODS7 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD7}"/>
+                        <Button type="Emphasized" class="buttonODS8 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD8}"/>
+                        <Button type="Emphasized" class="buttonODS9 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD9}"/>
+                        <Button type="Emphasized" enabled="false" class="buttonODS10 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD10}"/>
+                        <Button type="Emphasized" enabled="false" class="buttonODS11 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD11}"/>
+                        <Button type="Emphasized" enabled="false" class="buttonODS12 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD12}"/>
+                        <Button type="Emphasized" class="buttonODS13 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD13}"/>
+                        <Button type="Emphasized" enabled="false" class="buttonODS14 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD14}"/>
+                        <Button type="Emphasized" enabled="false" class="buttonODS15 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD15}"/>
+                        <Button type="Emphasized" enabled="false" class="buttonODS16 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD16}"/>
+                        <Button type="Emphasized" class="buttonODS17 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD17}"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+	</VBox>
+</core:FragmentDefinition>

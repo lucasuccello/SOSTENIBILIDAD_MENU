@@ -24,7 +24,11 @@
                     "localUri": "localService/metadata.xml",
                     "odataVersion": "2.0"
                 }
-            }
+            },
+			"DashboardDatasource": {
+				"uri": "model/Dashboard.json",
+				"type": "JSON"
+			}
         }
     },
     "sap.ui": {
@@ -53,7 +57,7 @@
             "id": "app"
         },
         "dependencies": {
-            "minUI5Version": "1.84.1",
+            "minUI5Version": "1.104.1",
             "libs": {
                 "sap.m": {},
                 "sap.ui.core": {},
@@ -80,7 +84,11 @@
                 "dataSource": "mainService",
                 "preload": true,
                 "settings": {}
-            }
+            },
+			"DashboardModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "DashboardDatasource"
+			}
         },
         "resources": {
             "css": [

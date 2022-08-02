@@ -1,83 +1,48 @@
-<mvc:View
-	controllerName="softtek.sostenibilidadmenu.controller.Home"
-	xmlns="sap.m"
-	xmlns:l="sap.ui.layout"
-	xmlns:core="sap.ui.core"
-	xmlns:mvc="sap.ui.core.mvc">
+<mvc:View controllerName="softtek.sostenibilidadmenu.controller.Home"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
     <App id="App">
-        <Page title="{i18n>title}" showHeader="false">
-            <l:BlockLayout
-                id="BlockLayout"
-                background="Default">
-                <l:BlockLayoutRow>
-                    <l:BlockLayoutCell class="sapUiNoContentPadding">
-                        <Image
-                            id="imgBanner2"
-                            width="100%"/>
-                    </l:BlockLayoutCell>
-                </l:BlockLayoutRow>
-                <l:BlockLayoutRow>
-                    <l:BlockLayoutCell
-                        backgroundColorSet="ColorSet11"
-                        backgroundColorShade="ShadeD">
-                        <l:VerticalLayout>
-                            <core:Icon
-                                src="sap-icon://role"
-                                size="2.5rem"
-                                color="Default"/>
-                        </l:VerticalLayout>
-                    </l:BlockLayoutCell>
-                    <l:BlockLayoutCell
-                        backgroundColorSet="ColorSet11"
-                        backgroundColorShade="ShadeB">
-                        <l:VerticalLayout>
-                            <core:Icon
-                                src="sap-icon://add-product"
-                                size="2.5rem"
-                                color="Default"/>
-                        </l:VerticalLayout>
-                    </l:BlockLayoutCell>
-                    <l:BlockLayoutCell
-                        backgroundColorSet="ColorSet11"
-                        backgroundColorShade="ShadeD">
-                        <l:VerticalLayout>
-                            <core:Icon
-                                src="sap-icon://customer-financial-fact-sheet"
-                                size="2.5rem"
-                                color="Default"/>
-                        </l:VerticalLayout>
-                    </l:BlockLayoutCell>
-                    <l:BlockLayoutCell
-                        backgroundColorSet="ColorSet11"
-                        backgroundColorShade="ShadeB">
-                        <l:VerticalLayout>
-                            <core:Icon
-                                id="supplierIcon"
-                                src="sap-icon://supplier"
-                                size="2.5rem"
-                                color="Default"
-                                />
-                        </l:VerticalLayout>
-                    </l:BlockLayoutCell>
-                </l:BlockLayoutRow>
-                <l:BlockLayoutRow>
-                    <l:BlockLayoutCell
-                        backgroundColorSet="ColorSet11"
-                        backgroundColorShade="ShadeB">
-                        <l:VerticalLayout>
-                            <core:Icon
-                                src="sap-icon://thumb-up"
-                                size="2.5rem"
-                                color="Default"/>
-                        </l:VerticalLayout>
-                    </l:BlockLayoutCell>
-                    <l:BlockLayoutCell
-                        backgroundColorSet="ColorSet9"
-                        backgroundColorShade="ShadeA"
-                        width="3">
-                    </l:BlockLayoutCell>
-                </l:BlockLayoutRow>
-            </l:BlockLayout>
-        </Page>
+        <tnt:ToolPage>
+            <!-- <tnt:header>
+                <tnt:ToolHeader>
+                    <Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" press=".onSideNavButtonPress">
+                        <layoutData>
+                            <OverflowToolbarLayoutData priority="NeverOverflow" />
+                        </layoutData>
+                    </Button>
+                </tnt:ToolHeader>
+            </tnt:header> -->
+            <tnt:sideContent>
+                <tnt:SideNavigation>
+                    <tnt:NavigationList itemSelect="onSelectItem" selectedKey="{view>/selectedMenuItem}">
+                        <tnt:NavigationListItem key="I" text="{i18n>menu_inicio}" icon="sap-icon://home"/>
+                        <tnt:NavigationListItem key="C" text="{i18n>menu_compromiso}" icon="sap-icon://decision"/>
+                        <tnt:NavigationListItem key="D" text="{i18n>menu_dash}" icon="sap-icon://kpi-corporate-performance"/>
+                    </tnt:NavigationList>
+                </tnt:SideNavigation>
+            </tnt:sideContent>
+            <tnt:mainContents>
+                <NavContainer id="pageContainer" initialPage="I">
+                    <pages>
+                        <ScrollContainer id="I" horizontal="false" vertical="true" height="100%">
+                            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.Inicio" type="XML"/>
+                        </ScrollContainer>
+                        <ScrollContainer id="C" horizontal="false" vertical="true" height="100%">
+                            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.Compromiso" type="XML"/>
+                        </ScrollContainer>
+                        <ScrollContainer id="D" horizontal="false" vertical="true" height="100%">
+                            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.Dashboard" type="XML"/>
+                        </ScrollContainer>
+                        <ScrollContainer id="O" horizontal="false" vertical="true" height="100%">
+                            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.DetalleODS" type="XML"/>
+                        </ScrollContainer>
+                    </pages>
+                </NavContainer>
+            </tnt:mainContents>
+        </tnt:ToolPage>
     </App>
 </mvc:View>

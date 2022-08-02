@@ -1,0 +1,66 @@
+<core:FragmentDefinition xmlns="sap.uxap" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" height="100%"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards">
+	<ObjectPageLayout id="DetalleODS"
+		showTitleInHeaderContent="true"
+		showEditHeaderButton="true"
+		editHeaderButtonPress="handleEditBtnPress"
+		upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+
+				<snappedHeading>
+					<m:HBox>
+						<m:Title text="{ODSModel>/titulo} - {ODSModel>/subTitulo}" wrapping="true"/>
+					</m:HBox>
+				</snappedHeading>
+
+				<actions>
+					<m:Button type="Emphasized" class="buttonODS4" text="{i18n>ini_btnOSD4}"/>
+                    <m:Button type="Emphasized" class="buttonODS5" text="{i18n>ini_btnOSD5}"/>
+                    <m:Button type="Emphasized" class="buttonODS8" text="{i18n>ini_btnOSD8}"/>
+                    <m:Button type="Emphasized" class="buttonODS9" text="{i18n>ini_btnOSD9}"/>
+                    <m:Button type="Emphasized" class="buttonODS13" text="{i18n>ini_btnOSD13}"/>
+                    <m:Button type="Emphasized" class="buttonODS17" text="{i18n>ini_btnOSD17}"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent>
+			<m:FlexBox fitContainer="true" alignItems="Center">
+				<m:Image src="{ODSModel>/icono}" width="10rem"/>
+
+                <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                    <m:Title titleStyle="H1" text="{ODSModel>/titulo}"/>
+                    <m:Title titleStyle="H2" text="{ODSModel>/subTitulo}"/>
+                </layout:VerticalLayout>
+			</m:FlexBox>
+		</headerContent>
+
+		<sections>
+			<ObjectPageSection id="detalle" title="Detalle" showTitle="false">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:VBox>
+                                <f:Card class="sapUiTinyMargin" width="100%" height="500px">
+                                    <f:content>
+                                        <m:HBox width="100%">
+                                            <m:VBox>
+                                                <m:Image src="{view>/rootPath}/images/ODS4.jpg" height="500px"/>
+                                            </m:VBox>
+
+                                            <m:VBox class="sapUiSmallMargin" justifyContent="Center" alignItems="Center">
+                                                <m:FormattedText htmlText="{i18n>det_descODS4}"/>
+                                            </m:VBox>
+                                        </m:HBox>
+                                    </f:content>
+                                </f:Card>
+                            </m:VBox>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</core:FragmentDefinition>
