@@ -16,8 +16,8 @@
 				</snappedHeading>
 
 				<actions>
-					<m:Button type="Emphasized" class="buttonODS4" text="{i18n>ini_btnOSD4}"/>
-                    <m:Button type="Emphasized" class="buttonODS5" text="{i18n>ini_btnOSD5}"/>
+					<m:Button type="Emphasized" class="buttonODS4" text="{i18n>ini_btnOSD4}" press="onNavODS4"/>
+                    <m:Button type="Emphasized" class="buttonODS5" text="{i18n>ini_btnOSD5}" press="onNavODS5"/>
                     <m:Button type="Emphasized" class="buttonODS8" text="{i18n>ini_btnOSD8}"/>
                     <m:Button type="Emphasized" class="buttonODS9" text="{i18n>ini_btnOSD9}"/>
                     <m:Button type="Emphasized" class="buttonODS13" text="{i18n>ini_btnOSD13}"/>
@@ -47,11 +47,11 @@
                                     <f:content>
                                         <m:HBox width="100%">
                                             <m:VBox>
-                                                <m:Image src="{view>/rootPath}/images/ODS4.jpg" height="500px"/>
+                                                <m:Image src="{ODSModel>/imagen}" height="500px"/>
                                             </m:VBox>
 
                                             <m:VBox class="sapUiSmallMargin" justifyContent="Center" alignItems="Center">
-                                                <m:FormattedText htmlText="{i18n>det_descODS4}"/>
+                                                <m:FormattedText class="textoDetalle" htmlText="{ODSModel>/descripcion}"/>
                                             </m:VBox>
                                         </m:HBox>
                                     </f:content>

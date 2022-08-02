@@ -17,7 +17,7 @@
                         <Button type="Emphasized" enabled="false" class="buttonODS2 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD2}"/>
                         <Button type="Emphasized" enabled="false" class="buttonODS3 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD3}"/>
                         <Button type="Emphasized" class="buttonODS4 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD4}" press="onNavODS4"/>
-                        <Button type="Emphasized" class="buttonODS5 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD5}"/>
+                        <Button type="Emphasized" class="buttonODS5 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD5}" press="onNavODS5"/>
                         <Button type="Emphasized" enabled="false" class="buttonODS6 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD6}"/>
                         <Button type="Emphasized" enabled="false" class="buttonODS7 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD7}"/>
                         <Button type="Emphasized" class="buttonODS8 sapUiSmallMarginEnd" text="{i18n>ini_btnOSD8}"/>

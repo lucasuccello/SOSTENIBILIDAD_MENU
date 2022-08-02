@@ -103,3 +103,9 @@
     -ms-transform: scale(1.08);
     transform: scale(1.08);
 }
+
+.textoDetalle{
+    font-size: 18px !important;
+    font-family: Raleway,Arial,sans-serif !important;
+    letter-spacing: .5px !important;
+}
