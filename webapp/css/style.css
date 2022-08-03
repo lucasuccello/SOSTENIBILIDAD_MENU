@@ -28,14 +28,22 @@
     border: 1px solid #4C9F38 !important;
 }
 
-.buttonODS4>.sapMBtnEmphasized {
+button[data-buttonods="ODS4"] >.sapMBtnEmphasized {
     background: #C5192D !important;
     border: 1px solid #C5192D !important;
 }
 
-.buttonODS5>.sapMBtnEmphasized {
+div[data-cardods="ODS4"] {
+    background-color: #C5192D !important;
+}
+
+button[data-buttonods="ODS5"] >.sapMBtnEmphasized {
     background: #FF3A21 !important;
     border: 1px solid #FF3A21 !important;
+}
+
+div[data-cardods="ODS5"] {
+    background: #FF3A21 !important;
 }
 
 .buttonODS6>.sapMBtnEmphasized {
@@ -48,14 +56,22 @@
     border: 1px solid #FCC30B !important;
 }
 
-.buttonODS8>.sapMBtnEmphasized {
+button[data-buttonods="ODS8"] >.sapMBtnEmphasized {
     background: #A21942 !important;
     border: 1px solid #A21942 !important;
 }
 
-.buttonODS9>.sapMBtnEmphasized {
+div[data-cardods="ODS8"] {
+    background-color: #A21942 !important;
+}
+
+button[data-buttonods="ODS9"] >.sapMBtnEmphasized {
     background: #FD6925 !important;
     border: 1px solid #FD6925 !important;
+}
+
+div[data-cardods="ODS9"] {
+    background-color: #FD6925 !important;
 }
 
 .buttonODS10>.sapMBtnEmphasized {
@@ -73,9 +89,13 @@
     border: 1px solid #BF8B2E !important;
 }
 
-.buttonODS13>.sapMBtnEmphasized {
+button[data-buttonods="ODS13"] >.sapMBtnEmphasized {
     background: #3F7E44 !important;
     border: 1px solid #3F7E44 !important;
+}
+
+div[data-cardods="ODS13"] {
+    background-color: #3F7E44 !important;
 }
 
 .buttonODS14>.sapMBtnEmphasized {
@@ -93,9 +113,13 @@
     border: 1px solid #00689D !important;
 }
 
-.buttonODS17>.sapMBtnEmphasized {
+button[data-buttonods="ODS17"] >.sapMBtnEmphasized {
     background: #19486A !important;
     border: 1px solid #19486A !important;
+}
+
+div[data-cardods="ODS17"] {
+    background-color: #19486A !important;
 }
 
 .card:hover{
@@ -108,4 +132,11 @@
     font-size: 18px !important;
     font-family: Raleway,Arial,sans-serif !important;
     letter-spacing: .5px !important;
+}
+
+.textoDetalleBlanco{
+    font-size: 18px !important;
+    font-family: Raleway,Arial,sans-serif !important;
+    letter-spacing: .5px !important;
+    color: white;
 }

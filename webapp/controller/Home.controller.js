@@ -2,8 +2,9 @@ sap.ui.define([
     "./BaseController",
     "sap/ui/model/json/JSONModel",
     'sap/ui/Device',
-    "../model/formatter"
-], function (BaseController, JSONModel, Device, formatter) {
+    "../model/formatter",
+    "sap/ui/core/Fragment"
+], function (BaseController, JSONModel, Device, formatter, Fragment) {
     "use strict";
     var oController;
     var oJSONModel = new JSONModel();
@@ -19,9 +20,9 @@ sap.ui.define([
             });
             this.getView().setModel(oViewModel, "view");
 
-            //ODS Model
+            //ODS Model detail
             var oODSModel = new JSONModel({});
-            this.getView().setModel(oODSModel, "ODSModel");
+            this.getView().setModel(oODSModel, "ODSModelDetail");
 
             Device.media.attachHandler(function (oDevice) {
                 this.getModel("view").setProperty("/isPhone", oDevice.name === "Phone");
@@ -37,32 +38,36 @@ sap.ui.define([
 			this.byId("pageContainer").to(this.getView().createId(sKey));
 		},
 
-        onNavODS4: function(){
-            var sRootPath = oController.getModel("view").getProperty("/rootPath");
-            oController.getModel("ODSModel").setData({
-                titulo: "Objetivo 4",
-                subTitulo: "Educación de calidad",
-                icono: sRootPath + "/images/IconDetailODS4.png",
-                imagen: sRootPath + "/images/ODS4.jpg",
-                descripcion: oController.getResourceBundle().getText("det_descODS4")
-            });
-            oController._navToDetail();
-        },
-
-        onNavODS5: function(){
-            var sRootPath = oController.getModel("view").getProperty("/rootPath");
-            oController.getModel("ODSModel").setData({
-                titulo: "Objetivo 5",
-                subTitulo: "Igualdad de género",
-                icono: sRootPath + "/images/IconDetailODS5.png",
-                imagen: sRootPath + "/images/ODS5.jpg",
-                descripcion: oController.getResourceBundle().getText("det_descODS5")
-            });
-            oController._navToDetail();
-        },
-
-        _navToDetail: function(){
+        onNavODSDetail: function(oEvent){
+            // let oODSList = this.getModel("ODSModel").getProperty("/ODSList"),
+            //     sIdODS = oEvent.getSource().data("idODS"),
+            //     oODS = oODSList.find(oElement => oElement.Id === sIdODS);
+            let oODS = oEvent.getSource().getBindingContext("ODSModel").getObject();
+            this.getModel("ODSModelDetail").setData(oODS);
             oController.byId("pageContainer").to(oController.getView().createId('O'));
-        }
+        },
+
+        onOpenDialogDetail: function(oEvent){
+            let oODS = oEvent.getSource().getBindingContext("ODSModel").getObject();
+            this.getModel("ODSModelDetail").setData(oODS);
+
+            Fragment.load({
+                name: "softtek.sostenibilidadmenu.view.Fragments.DialogDetalle",
+                controller: oController,
+                id: oController.getView().getId()
+            }).then(function (oPopup) {
+                oController._oDialogDetail = oPopup;
+                oController.getView().addDependent(oPopup);
+                oController._oDialogDetail.attachAfterClose(function (oEvent) {
+                    oEvent.getSource().destroy();
+                });
+
+                oController._oDialogDetail.open();
+            });
+        },
+
+        onCloseDialog: function () {
+			oController._oDialogDetail.close();
+		},
     });
 });

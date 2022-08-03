@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.uxap" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" height="100%"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards">
+    <ObjectPageSection title="ODS17" visible="{= ${ODSModelDetail>/Id} === 'ODS17'}">
+        <subSections>
+            <ObjectPageSubSection>
+                <blocks>
+                    <m:VBox>
+                        
+                    </m:VBox>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

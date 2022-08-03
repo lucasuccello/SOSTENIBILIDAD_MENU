@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.uxap" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" height="100%"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards" xmlns:w="sap.ui.integration.widgets">
+    <ObjectPageSection title="{i18n>sec_ods4_conf}" visible="{= ${ODSModelDetail>/Id} === 'ODS4'}">
+        <subSections>
+            <ObjectPageSubSection>
+                <blocks>
+                    <m:VBox>
+                        
+                    </m:VBox>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+    <ObjectPageSection title="{i18n>sec_ods4_ind1}" visible="{= ${ODSModelDetail>/Id} === 'ODS4'}">
+        <subSections>
+            <ObjectPageSubSection>
+                <blocks>
+                    <m:VBox>
+                        <f:Card class="sapUiTinyMargin" width="100%">
+                            <f:customData>
+                                <core:CustomData key="cardods" value="{ODSModelDetail>/Id}" writeToDom="true"></core:CustomData>
+                            </f:customData>
+                            <f:content>
+                                <m:VBox width="100%" class="sapUiSmallMargin">
+                                    <m:Title class="textoDetalleBlanco" text="{ODSModelDetail>/indicador1/descripcion}" wrapping="true"/>
+                                </m:VBox>
+                            </f:content>
+                        </f:Card>
+
+                        <m:HBox width="100%" wrap="Wrap">
+                            <w:Card class="sapUiTinyMargin" manifest="{DashboardModel>/donut}" width="300px" height="400px">
+                                <w:layoutData>
+                                    <f:GridContainerItemLayoutData rows="4" columns="4" />
+                                </w:layoutData>
+                            </w:Card>
+                        </m:HBox>
+                    </m:VBox>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

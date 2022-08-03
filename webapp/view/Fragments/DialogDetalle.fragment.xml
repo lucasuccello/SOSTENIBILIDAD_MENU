@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m" height="100%" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Dialog title="{i18n>dia_titulo}" busyIndicatorDelay="0" contentWidth="50%" showHeader="false">
+        <content>
+            <VBox>
+                <Image src="{view>/rootPath}/images/{ODSModelDetail>/Id}/Banner.jpg" width="100%"/>
+                <VBox class="sapUiSmallMargin">
+                    <FormattedText class="textoDetalle" htmlText="{ODSModelDetail>/descripcion}"/>
+                </VBox>
+            </VBox>
+        </content>
+		<buttons>
+			<Button type="Emphasized" press="onCloseDialog" text="{i18n>dia_btnCerrar}">
+                <customData>
+                    <core:CustomData key="buttonods" value="{ODSModelDetail>/Id}" writeToDom="true"></core:CustomData>
+                </customData>
+            </Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

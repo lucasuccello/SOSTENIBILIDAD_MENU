@@ -9,22 +9,22 @@
             <Title text="{i18n>ini_titAmb}" titleStyle="H1" wrapping="true" class="sapUiSmallMarginTopBottom"/>
 
             <HBox width="100%" wrap="Wrap" justifyContent="Center" class="sapUiSmallMarginTop">
-                <VBox class="sapUiMediumMarginEnd" alignItems="Center" width="200px">
+                <VBox class="sapUiMediumMarginEnd sapUiTinyMarginTopBottom" alignItems="Center" width="250px">
                     <Image src="{view>/rootPath}/images/Energia.svg" class="sapUiTinyMarginBottom"/>
                     <Title text="{i18n>ini_titEnergia}" titleStyle="H3" textAlign="Center" wrapping="true"/>
                 </VBox>
 
-                <VBox class="sapUiMediumMarginEnd" alignItems="Center" width="200px">
+                <VBox class="sapUiMediumMarginEnd sapUiTinyMarginTopBottom" alignItems="Center" width="250px">
                     <Image src="{view>/rootPath}/images/Agua.svg" class="sapUiTinyMarginBottom"/>
                     <Title text="{i18n>ini_titAgua}" titleStyle="H3" textAlign="Center" wrapping="true"/>
                 </VBox>
 
-                <VBox class="sapUiMediumMarginEnd" alignItems="Center" width="200px">
+                <VBox class="sapUiMediumMarginEnd sapUiTinyMarginTopBottom" alignItems="Center" width="250px">
                     <Image src="{view>/rootPath}/images/Residuos.svg" class="sapUiTinyMarginBottom"/>
                     <Title text="{i18n>ini_titResiduos}" titleStyle="H3" textAlign="Center" wrapping="true"/>
                 </VBox>
 
-                <VBox alignItems="Center" width="200px">
+                <VBox class="sapUiTinyMarginTopBottom" alignItems="Center" width="250px">
                     <Image src="{view>/rootPath}/images/Edificios.svg" class="sapUiTinyMarginBottom"/>
                     <Title text="{i18n>ini_titEdificios}" titleStyle="H3" textAlign="Center" wrapping="true"/>
                 </VBox>
@@ -34,97 +34,38 @@
 
         <Image class="sapUiSmallMarginTopBottom" src="{view>/rootPath}/images/BannerODS.png" width="450px"/>
 
-        <HBox width="100%" wrap="Wrap" justifyContent="Center">
-
-            <html:div class="sapUiSmallMargin" style="cursor: pointer;" onClick="sap.ui.controller('softtek.sostenibilidadmenu.controller.Home').onNavODS4()">
-                <f:Card class="card" width="auto" height="160px">
+        <HBox width="100%" wrap="Wrap" justifyContent="Center" items="{ODSModel>/ODSList}">
+            <items>
+            <!-- <html:div class="sapUiSmallMargin" style="cursor: pointer;" onClick="sap.ui.controller('softtek.sostenibilidadmenu.controller.Home').onNavODS4()"> -->
+                <f:Card class="card sapUiSmallMargin {ODSModel>claseBackground}" width="auto" height="160px">
+                    <f:customData>
+                        <core:CustomData key="cardods" value="{ODSModel>Id}" writeToDom="true"></core:CustomData>
+                    </f:customData>
                     <f:content>
                         <HBox width="100%" wrap="Wrap">
                             <VBox>
-                                <Image src="{view>/rootPath}/images/ODS4.jpg" height="160px"/>
+                                <Image src="{view>/rootPath}/images/{ODSModel>Id}/ImagenCard.jpg" height="160px"/>
                             </VBox>
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/IconODS4.png" height="160px"/>
+                            <VBox height="160px">
+                                <Image src="{view>/rootPath}/images/{ODSModel>Id}/Icono.png" height="120px"/>
+                                <HBox height="30px" width="100%" justifyContent="End">
+                                    <Button type="Emphasized" class="{ODSModel>claseBoton} sapUiTinyMarginEnd" icon="sap-icon://action-settings" press="onNavODSDetail">
+                                        <customData>
+                                            <core:CustomData key="buttonods" value="{ODSModel>Id}" writeToDom="true"></core:CustomData>
+                                        </customData>
+                                    </Button>
+                                    <Button type="Emphasized" class="buttonODS4 sapUiTinyMarginEnd" icon="sap-icon://show" press="onOpenDialogDetail">
+                                        <customData>
+                                            <core:CustomData key="buttonods" value="{ODSModel>Id}" writeToDom="true"></core:CustomData>
+                                        </customData>
+                                    </Button>
+                                </HBox>
                             </VBox>
                         </HBox>
                     </f:content>
                 </f:Card>
-            </html:div>
-
-            <html:div class="sapUiSmallMargin" style="cursor: pointer;" onClick="sap.ui.controller('softtek.sostenibilidadmenu.controller.Home').onNavODS5()">
-                <f:Card class="card" width="auto" height="160px">
-                    <f:content>
-                        <HBox width="100%" wrap="Wrap">
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/ODS5.jpg" height="160px" press="onNavToODS5"/>
-                            </VBox>
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/IconODS5.png" height="160px" press="onNavToODS5"/>
-                            </VBox>
-                        </HBox>
-                    </f:content>
-                </f:Card>
-            </html:div>
-
-            <html:div class="sapUiSmallMargin" style="cursor: pointer;" onClick="sap.ui.controller('softtek.sostenibilidadmenu.controller.Home').onNavODS8()">
-                <f:Card class="card" width="auto" height="160px">
-                    <f:content>
-                        <HBox width="100%" wrap="Wrap">
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/ODS8.jpg" height="160px"/>
-                            </VBox>
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/IconODS8.png" height="160px"/>
-                            </VBox>
-                        </HBox>
-                    </f:content>
-                </f:Card>
-            </html:div>
-
-            <html:div class="sapUiSmallMargin" style="cursor: pointer;" onClick="sap.ui.controller('softtek.sostenibilidadmenu.controller.Home').onNavODS9()">
-                <f:Card class="card" width="auto" height="160px">
-                    <f:content>
-                        <HBox width="100%" wrap="Wrap">
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/ODS9.jpg" height="160px"/>
-                            </VBox>
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/IconODS9.png" height="160px"/>
-                            </VBox>
-                        </HBox>
-                    </f:content>
-                </f:Card>
-            </html:div>
-
-            <html:div class="sapUiSmallMargin" style="cursor: pointer;" onClick="sap.ui.controller('softtek.sostenibilidadmenu.controller.Home').onNavODS13()">
-                <f:Card class="card" width="auto" height="160px">
-                    <f:content>
-                        <HBox width="100%" wrap="Wrap">
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/ODS13.jpg" height="160px"/>
-                            </VBox>
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/IconODS13.png" height="160px"/>
-                            </VBox>
-                        </HBox>
-                    </f:content>
-                </f:Card>
-            </html:div>
-
-            <html:div class="sapUiSmallMargin" style="cursor: pointer;" onClick="sap.ui.controller('softtek.sostenibilidadmenu.controller.Home').onNavODS17()">
-                <f:Card class="card" width="auto" height="160px">
-                    <f:content>
-                        <HBox width="100%" wrap="Wrap">
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/ODS17.jpg" height="160px"/>
-                            </VBox>
-                            <VBox>
-                                <Image src="{view>/rootPath}/images/IconODS17.jpg" height="160px"/>
-                            </VBox>
-                        </HBox>
-                    </f:content>
-                </f:Card>
-            </html:div>
+            <!-- </html:div> -->
+            </items>
         </HBox>
     </VBox>
 </core:FragmentDefinition>

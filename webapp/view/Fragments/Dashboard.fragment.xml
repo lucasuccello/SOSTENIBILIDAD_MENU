@@ -25,7 +25,6 @@
                                 <StandardListItem highlight="Information" title="ODS 13 - Acción por el clima" icon="{view>/rootPath}/images/IconODS13.png" adaptTitleSize="true"/>
 
                                 <StandardListItem highlight="Information" title="ODS 17 - Alianzas para lograr los objetivos" icon="{view>/rootPath}/images/IconODS17.jpg" adaptTitleSize="true"/>
-                                
                             </items>
                         </List>
                     </VBox>

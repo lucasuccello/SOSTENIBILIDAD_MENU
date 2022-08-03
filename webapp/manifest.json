@@ -28,6 +28,10 @@
 			"DashboardDatasource": {
 				"uri": "model/Dashboard.json",
 				"type": "JSON"
+			},
+			"ODSDatasource": {
+				"uri": "model/ODSModel.json",
+				"type": "JSON"
 			}
         }
     },
@@ -88,6 +92,10 @@
 			"DashboardModel": {
 				"type": "sap.ui.model.json.JSONModel",
 				"dataSource": "DashboardDatasource"
+			},
+			"ODSModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "ODSDatasource"
 			}
         },
         "resources": {

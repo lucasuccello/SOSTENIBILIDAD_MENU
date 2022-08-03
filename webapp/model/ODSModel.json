@@ -1,0 +1,50 @@
+{
+    "ODSList": [
+        {
+            "Id": "ODS4",
+            "titulo": "Objetivo 4",
+            "subTitulo": "Educación de calidad",
+            "descripcion": "<p>Tenemos una fuerte vocaci&oacute;n de ser una de las mejores empresas para el mundo y estamos comprometidos con la generaci&oacute;n de valor a trav&eacute;s de la tecnolog&iacute;a.<br /><br />Nuestras Metas:<br />Contribuir en el proceso de transformaci&oacute;n digital de nuestros clientes para su desarrollo y crecimiento.<br /><br />Ofrecer soluciones a trav&eacute;s de un proceso de constante innovaci&oacute;n tecnol&oacute;gica para el crecimiento sostenible de nuestros clientes y de la sociedad.</p>",
+            "actRealizadas": "25",
+            "indicador1": {
+                "descripcion": "1 - De aquí a 2030, asegurar que todas las niñas y todos los niños terminen la enseñanza primaria y secundaria, que ha de ser gratuita, equitativa y de calidad y producir resultados de aprendizaje pertinentes y efectivos",
+                "datos": ""
+            }
+        },
+        {
+            "Id": "ODS5",
+            "titulo": "Objetivo 5",
+            "subTitulo": "Igualdad de género",
+            "descripcion": "<p>La igualdad de g&eacute;nero es uno de los fundamentos esenciales para la prosperidad y la sostenibilidad. Para Softtek, generar equidad de oportunidades y condiciones para nuestras mujeres es trascendental.</p><p>Enfocamos esfuerzos en conjunto con otras organizaciones para:</p><ul><li>Generar condiciones de equidad en temas de liderazgo en todos los niveles.</li><li>Asegurar acceso a oportunidades equitativas en temas de salario y beneficios.</li><li>Facilitar el acceso al desarrollo profesional a trav&eacute;s del conocimiento y aprendizaje de la tecnolog&iacute;a.</li><li>Promover la inclusi&oacute;n de un mayor n&uacute;mero de mujeres en el campo de las tecnolog&iacute;as a trav&eacute;s de la educaci&oacute;n.</li></ul>",
+            "actRealizadas": "20"
+        },
+        {
+            "Id": "ODS8",
+            "titulo": "Objetivo 8",
+            "subTitulo": "Trabajo decente y crecimiento económico",
+            "descripcion": "<p>Trabajamos continuamente para propiciar un ambiente laboral inclusivo y de remuneraci&oacute;n justa para impulsar el progreso de cada persona y mejorar sus est&aacute;ndares de vida.</p><p>Nuestras Metas:<br />Proporcionar las mejores condiciones de desarrollo profesional, brindando oportunidades y espacios para la innovaci&oacute;n tecnol&oacute;gica y desarrollo de nuevos productos dentro de la organizaci&oacute;n.<br /><br />Promover el crecimiento profesional a trav&eacute;s de programas de identificaci&oacute;n y desarrollo del talento.<br /><br />Promover pol&iacute;ticas de trabajo inclusivo y de equidad de oportunidades para todos.<br /><br />Promover un entorno de trabajo seguro y agradable que contribuya al mejoramiento de la calidad de vida.</p>",
+            "actRealizadas": "33"
+        },
+        {
+            "Id": "ODS9",
+            "titulo": "Objetivo 9",
+            "subTitulo": "Industria innovación e infraestructura",
+            "descripcion": "<p>Tenemos una fuerte vocaci&oacute;n de ser una de las mejores empresas para el mundo y estamos comprometidos con la generaci&oacute;n de valor a trav&eacute;s de la tecnolog&iacute;a.</p><p>Nuestras Metas:<br />Contribuir en el proceso de transformaci&oacute;n digital de nuestros clientes para su desarrollo y crecimiento.<br /><br />Ofrecer soluciones a trav&eacute;s de un proceso de constante innovaci&oacute;n tecnol&oacute;gica para el crecimiento sostenible de nuestros clientes y de la sociedad.</p>",
+            "actRealizadas": "40"
+        },
+        {
+            "Id": "ODS13",
+            "titulo": "Objetivo 13",
+            "subTitulo": "Acción por el clima",
+            "descripcion": "<p>Generar un impacto positivo al medio ambiente con el uso de la tecnolog&iacute;a y a trav&eacute;s de nuestros clientes.</p><p>En nuestra Pol&iacute;tica de Medio Ambiente nos enfocamos principalmente en los temas que nuestra propia operaci&oacute;n impacta y en la creaci&oacute;n de conciencia ambiental para llevar estas pr&aacute;cticas m&aacute;s all&aacute; de nuestra organizaci&oacute;n. Esos temas son:</p><ul><li>Ahorro y tratamiento de agua</li><li>Ecoeficiencia energ&eacute;tica</li><li>Emisiones</li><li>Gesti&oacute;n de residuos</li><li>Edificios LEED</li></ul><p>Sabemos que preservando el entorno, aseguramos la disponibilidad de recursos para las generaciones futuras y la perdurabilidad de nuestro negocio.</p>",
+            "actRealizadas": "22"
+        },
+        {
+            "Id": "ODS17",
+            "titulo": "Objetivo 17",
+            "subTitulo": "Alianzas para lograr los objetivos",
+            "descripcion": "<p>Lograr la sostenibilidad no es un tema de individualidades, todos formamos parte de las cadenas o ecosistemas de otros.</p><p>Nuestras Metas:<br />Generar colaboraci&oacute;n y buenas relaciones con nuestro entorno (gobierno, sociedad civil, sector educativo y sector privado).<br /><br />Fomentar la participaci&oacute;n del sector privado en los Grupos de Trabajo de la Agenda 2030 que lideramos y que tienen como objetivo la creaci&oacute;n de iniciativas para el cumplimiento de los Objetivos de Desarrollo Sostenible.</p>",
+            "actRealizadas": "15"
+        }
+    ]
+}

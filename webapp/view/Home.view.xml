@@ -21,7 +21,14 @@
                     <tnt:NavigationList itemSelect="onSelectItem" selectedKey="{view>/selectedMenuItem}">
                         <tnt:NavigationListItem key="I" text="{i18n>menu_inicio}" icon="sap-icon://home"/>
                         <tnt:NavigationListItem key="C" text="{i18n>menu_compromiso}" icon="sap-icon://decision"/>
-                        <tnt:NavigationListItem key="D" text="{i18n>menu_dash}" icon="sap-icon://kpi-corporate-performance"/>
+                        <tnt:NavigationListItem key="D" text="{i18n>menu_dash}" icon="sap-icon://kpi-corporate-performance">
+                            <tnt:NavigationListItem key="ODS4" text="{i18n>ini_btnOSD4}"/>
+                            <tnt:NavigationListItem key="ODS5" text="{i18n>ini_btnOSD5}"/>
+                            <tnt:NavigationListItem key="ODS8" text="{i18n>ini_btnOSD8}"/>
+                            <tnt:NavigationListItem key="ODS9" text="{i18n>ini_btnOSD9}"/>
+                            <tnt:NavigationListItem key="ODS13" text="{i18n>ini_btnOSD13}"/>
+                            <tnt:NavigationListItem key="ODS17" text="{i18n>ini_btnOSD17}"/>
+                        </tnt:NavigationListItem>
                     </tnt:NavigationList>
                 </tnt:SideNavigation>
             </tnt:sideContent>
@@ -39,6 +46,25 @@
                         </ScrollContainer>
                         <ScrollContainer id="O" horizontal="false" vertical="true" height="100%">
                             <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.DetalleODS" type="XML"/>
+                        </ScrollContainer>
+
+                        <ScrollContainer id="ODS4" horizontal="false" vertical="true" height="100%">
+                            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.KPIsODS.KPIsODS4" type="XML"/>
+                        </ScrollContainer>
+                        <ScrollContainer id="ODS5" horizontal="false" vertical="true" height="100%">
+                            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.KPIsODS.KPIsODS5" type="XML"/>
+                        </ScrollContainer>
+                        <ScrollContainer id="ODS8" horizontal="false" vertical="true" height="100%">
+                            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.KPIsODS.KPIsODS8" type="XML"/>
+                        </ScrollContainer>
+                        <ScrollContainer id="ODS9" horizontal="false" vertical="true" height="100%">
+                            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.KPIsODS.KPIsODS9" type="XML"/>
+                        </ScrollContainer>
+                        <ScrollContainer id="ODS13" horizontal="false" vertical="true" height="100%">
+                            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.KPIsODS.KPIsODS13" type="XML"/>
+                        </ScrollContainer>
+                        <ScrollContainer id="ODS17" horizontal="false" vertical="true" height="100%">
+                            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.KPIsODS.KPIsODS17" type="XML"/>
                         </ScrollContainer>
                     </pages>
                 </NavContainer>
