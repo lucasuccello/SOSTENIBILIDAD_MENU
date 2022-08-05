@@ -33,6 +33,27 @@
 				"uri": "model/ODSModel.json",
 				"type": "JSON"
 			}
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "Sostenibilidad",
+                    "action": "Gestion",
+
+                    "title": "Sostenibilidad",
+                    "subTitle": "Gestion",
+                    "icon": "sap-icon://customer-financial-fact-sheet"
+                }
+            }
+        }
+    },
+    "sap.cloud.portal": {
+        "Sostenibilidad-Gestion": {
+            "vizType": "softtek.sostenibilidadmenutile"
         }
     },
     "sap.ui": {
@@ -91,10 +112,16 @@
             },
 			"DashboardModel": {
 				"type": "sap.ui.model.json.JSONModel",
+                "settings": {
+                    "defaultBindingMode": "OneWay"
+                },
 				"dataSource": "DashboardDatasource"
 			},
 			"ODSModel": {
 				"type": "sap.ui.model.json.JSONModel",
+                "settings": {
+                    "defaultBindingMode": "TwoWay"
+                },
 				"dataSource": "ODSDatasource"
 			}
         },

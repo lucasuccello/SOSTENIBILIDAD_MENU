@@ -1,26 +1,26 @@
 <core:FragmentDefinition xmlns="sap.uxap" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" height="100%"
     xmlns:f="sap.f"
     xmlns:card="sap.f.cards">
-	<ObjectPageLayout useIconTabBar="true"
+	<ObjectPageLayout id="pageDetalle" useIconTabBar="true"
 		showTitleInHeaderContent="true"
 		showEditHeaderButton="true"
 		editHeaderButtonPress="handleEditBtnPress"
-		upperCaseAnchorBar="false">
+		upperCaseAnchorBar="false" showFooter="true">
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
 
 				<snappedHeading>
 					<m:HBox>
-						<m:Title text="{ODSModelDetail>/titulo} - {ODSModelDetail>/subTitulo}" wrapping="true"/>
+						<m:Title text="{titulo} - {subTitulo}" wrapping="true"/>
 					</m:HBox>
 				</snappedHeading>
 
 				<actions>
-                    <m:HBox items="{ODSModel>/ODSList}">
+                    <m:HBox items="{/ODSList}">
                         <m:items>
-                            <m:Button type="Emphasized" text="{ODSModel>Id}" class="sapUiTinyMarginEnd" press="onNavODSDetail">
+                            <m:Button type="Emphasized" text="{Id}" class="sapUiTinyMarginEnd" press="onNavODSDetail">
                                 <m:customData>
-                                    <core:CustomData key="buttonods" value="{ODSModel>Id}" writeToDom="true"></core:CustomData>
+                                    <core:CustomData key="buttonods" value="{Id}" writeToDom="true"></core:CustomData>
                                 </m:customData>
                             </m:Button>
                         </m:items>
@@ -32,18 +32,18 @@
 		<headerContent>
 			<m:FlexBox fitContainer="true" alignItems="Center" justifyContent="SpaceBetween">
                 <m:HBox alignItems="Center">
-                    <m:Image src="{view>/rootPath}/images/{ODSModelDetail>/Id}/IconoInvertido.png" width="10rem"/>
+                    <m:Image src="{view>/rootPath}/images/{Id}/IconoInvertido.png" width="10rem"/>
 
                     <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-                        <m:Title titleStyle="H1" text="{ODSModelDetail>/titulo}"/>
-                        <m:Title titleStyle="H2" text="{ODSModelDetail>/subTitulo}"/>
+                        <m:Title titleStyle="H1" text="{titulo}"/>
+                        <m:Title titleStyle="H2" text="{subTitulo}"/>
                     </layout:VerticalLayout>
                 </m:HBox>
 
-                <m:VBox class="sapUiSmallMarginBegin" justifyContent="Center" alignItems="End">
-                    <m:ObjectNumber number="{ODSModelDetail>/actRealizadas}" class="sapMObjectNumberLarge" state="Success"/>
+                <!-- <m:VBox class="sapUiSmallMarginBegin" justifyContent="Center" alignItems="End">
+                    <m:ObjectNumber number="{actRealizadas}" class="sapMObjectNumberLarge" state="Success"/>
                     <m:ObjectStatus text="Act. realizadas" class="sapMObjectStatusLarge" state="Success"/>
-                </m:VBox>
+                </m:VBox> -->
 			</m:FlexBox>
 		</headerContent>
 
@@ -55,5 +55,15 @@
             <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.SeccionesODS.ODS13" type="XML"/>
             <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.SeccionesODS.ODS17" type="XML"/>
 		</sections>
+        <footer>
+            <m:OverflowToolbar>
+                <m:ToolbarSpacer/>
+				<m:Button type="Emphasized" text="Guardar" press="onSave">
+                    <m:customData>
+                        <core:CustomData key="buttonods" value="{Id}" writeToDom="true"></core:CustomData>
+                    </m:customData>
+                </m:Button>
+	        </m:OverflowToolbar>
+        </footer>
 	</ObjectPageLayout>
 </core:FragmentDefinition>

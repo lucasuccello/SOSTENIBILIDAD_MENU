@@ -1,39 +1,300 @@
-<core:FragmentDefinition xmlns="sap.uxap" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" height="100%"
+<core:FragmentDefinition xmlns="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout"
+    xmlns:m="sap.m" height="100%"
     xmlns:f="sap.f"
-    xmlns:card="sap.f.cards" xmlns:w="sap.ui.integration.widgets">
-    <ObjectPageSection title="{i18n>sec_ods4_conf}" visible="{= ${ODSModelDetail>/Id} === 'ODS4'}">
+    xmlns:card="sap.f.cards"
+    xmlns:w="sap.ui.integration.widgets"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:commons="sap.suite.ui.commons">
+    <ObjectPageSection title="{i18n>sec_ods4_conf}" visible="{= ${Id} === 'ODS4'}">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>
-                    <m:VBox>
-                        
-                    </m:VBox>
+                    <f:Card class="sapUiTinyMargin" width="100%">
+                        <f:content>
+                            <m:VBox items="{ODSModelDetail>/indicadores}" width="100%">
+                                <m:Panel class="panel" expandable="true">
+                                    <m:headerToolbar>
+                                        <m:OverflowToolbar>
+                                            <m:Text text="Indicador {ODSModelDetail>id}"/>
+                                        </m:OverflowToolbar>
+                                    </m:headerToolbar>
+                                    <m:content>
+                                        <m:VBox width="100%">
+                                            <m:Label text="Descripción:"/>
+                                            <m:TextArea width="100%" class="sapUiSmallMarginBottom" value="{ODSModelDetail>descripcion}" showExceededText="true" maxLength="300" valueState="{= ${ODSModelDetail>descripcion}.length > 300 ? 'Error' : 'None' }" valueLiveUpdate="true"/>
+                                            <m:VBox items="{ODSModelDetail>DatosKPIs}" width="100%">
+                                                <m:Panel class="panel" expandable="true">
+                                                    <m:headerToolbar>
+                                                        <m:OverflowToolbar>
+                                                            <m:Text text="{ODSModelDetail>titulo} - {ODSModelDetail>subTitulo}"/>
+                                                        </m:OverflowToolbar>
+                                                    </m:headerToolbar>
+                                                    <m:content>
+                                                        <m:VBox width="100%">
+                                                            <f:GridList headerText="Informacón de KPI's" items="{ODSModelDetail>datos}">
+                                                                <f:GridListItem>
+                                                                    <m:VBox class="sapUiSmallMargin">
+                                                                        <m:layoutData>
+                                                                            <m:FlexItemData growFactor="1" shrinkFactor="0" />
+                                                                        </m:layoutData>
+
+                                                                        <m:Title class="sapUiSmallMarginBottom" text="{ODSModelDetail>Categoria}" wrapping="true" />
+
+                                                                        <m:VBox visible="{= ${ODSModelDetail>idIndicadorODS} === '1'}" width="100%">
+                                                                            <m:VBox width="100%" class="sapUiTinyMarginBottom">
+                                                                                <m:Label text="Niños:"/>
+                                                                                <m:StepInput change="onChangeValor" value="{ODSModelDetail>Niños}" min="0" width="100%" validationMode="LiveChange"/>
+                                                                            </m:VBox>
+                                                                            <m:VBox width="100%" class="sapUiTinyMarginBottom">
+                                                                                <m:Label text="Niñas:"/>
+                                                                                <m:StepInput value="{ODSModelDetail>Niñas}" min="0" width="100%"/>
+                                                                            </m:VBox>
+                                                                            <m:VBox width="100%">
+                                                                                <m:Label text="Adolecentes:"/>
+                                                                                <m:StepInput value="{ODSModelDetail>Adolecentes}" min="0" width="100%"/>
+                                                                            </m:VBox>
+                                                                        </m:VBox>
+
+                                                                        <m:VBox visible="{= ${ODSModelDetail>idIndicadorODS} === '2.1'}" width="100%">
+                                                                            <m:VBox width="100%" class="sapUiTinyMarginBottom">
+                                                                                <m:Label text="Niños:"/>
+                                                                                <m:StepInput value="{ODSModelDetail>Niños}" min="0" width="100%"/>
+                                                                            </m:VBox>
+                                                                            <m:VBox width="100%">
+                                                                                <m:Label text="Niñas:"/>
+                                                                                <m:StepInput value="{ODSModelDetail>Niñas}" min="0" width="100%"/>
+                                                                            </m:VBox>
+                                                                        </m:VBox>
+
+                                                                        <m:VBox visible="{= ${ODSModelDetail>idIndicadorODS} === '2.2'}" width="100%">
+                                                                            <m:VBox width="100%" class="sapUiTinyMarginBottom">
+                                                                                <m:Label text="Cantidad:"/>
+                                                                                <m:StepInput value="{ODSModelDetail>Cantidad}" min="0" width="100%"/>
+                                                                            </m:VBox>
+                                                                        </m:VBox>
+
+                                                                        <m:VBox visible="{= ${ODSModelDetail>idIndicadorODS} === '3'}" width="100%">
+                                                                            <m:VBox width="100%" class="sapUiTinyMarginBottom">
+                                                                                <m:Label text="Jovenes:"/>
+                                                                                <m:StepInput value="{ODSModelDetail>Jovenes}" min="0" width="100%"/>
+                                                                            </m:VBox>
+                                                                            <m:VBox width="100%" class="sapUiTinyMarginBottom">
+                                                                                <m:Label text="Adultos:"/>
+                                                                                <m:StepInput value="{ODSModelDetail>Adultos}" min="0" width="100%"/>
+                                                                            </m:VBox>
+                                                                        </m:VBox>
+                                                                    </m:VBox>
+                                                                </f:GridListItem>
+                                                            </f:GridList>
+                                                        </m:VBox>
+                                                    </m:content>
+                                                </m:Panel>
+                                            </m:VBox>
+                                        </m:VBox>
+                                    </m:content>
+                                </m:Panel>
+                            </m:VBox>
+                        </f:content>
+                    </f:Card>
                 </blocks>
             </ObjectPageSubSection>
         </subSections>
     </ObjectPageSection>
-    <ObjectPageSection title="{i18n>sec_ods4_ind1}" visible="{= ${ODSModelDetail>/Id} === 'ODS4'}">
+    <ObjectPageSection title="{i18n>sec_ods4_ind1}" visible="{= ${Id} === 'ODS4'}">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>
                     <m:VBox>
                         <f:Card class="sapUiTinyMargin" width="100%">
                             <f:customData>
-                                <core:CustomData key="cardods" value="{ODSModelDetail>/Id}" writeToDom="true"></core:CustomData>
+                                <core:CustomData key="cardods" value="{Id}" writeToDom="true"></core:CustomData>
                             </f:customData>
                             <f:content>
                                 <m:VBox width="100%" class="sapUiSmallMargin">
-                                    <m:Title class="textoDetalleBlanco" text="{ODSModelDetail>/indicador1/descripcion}" wrapping="true"/>
+                                    <m:Title class="textoDetalleBlanco" text="{indicadores/0/descripcion}" wrapping="true"/>
                                 </m:VBox>
                             </f:content>
                         </f:Card>
 
                         <m:HBox width="100%" wrap="Wrap">
-                            <w:Card class="sapUiTinyMargin" manifest="{DashboardModel>/donut}" width="300px" height="400px">
-                                <w:layoutData>
-                                    <f:GridContainerItemLayoutData rows="4" columns="4" />
-                                </w:layoutData>
-                            </w:Card>
+                            <!-- <m:items>
+                                <f:Card class="sapUiTinyMargin" width="500px" height="600px">
+                                    <f:content>
+                                        <m:VBox width="100%" class="sapUiSmallMargin">
+                                            <viz:VizFrame width="100%" feeds="{ path: 'feeds', templateShareable: false}" vizType="{tipo}" vizProperties="{vizProperties}">
+                                                <viz:dataset>
+                                                    <viz.data:FlattenedDataset dimensions="{dimensions}" measures="{measures}" data="{datos}">
+                                                        <viz.data:dimensions>
+                                                            <viz.data:DimensionDefinition name="{label}" value="{value}"/>
+                                                        </viz.data:dimensions>
+                                                        <viz.data:measures>
+                                                            <viz.data:MeasureDefinition name="{label}" value="{value}"/>
+                                                        </viz.data:measures>
+                                                    </viz.data:FlattenedDataset>
+                                                </viz:dataset>
+                                                <viz:feeds>
+                                                    <viz.feeds:FeedItem uid="{uid}" type="{type}" values="{values}" />
+                                                </viz:feeds>
+                                            </viz:VizFrame>
+                                        </m:VBox>
+                                    </f:content>
+                                </f:Card>
+                            </m:items> -->
+                            <f:Card class="sapUiTinyMargin" width="400px">
+                                <f:header>
+                                    <card:Header title="{indicadores/0/DatosKPIs/0/titulo}" subtitle="{indicadores/0/DatosKPIs/0/subTitulo}"/>
+                                </f:header>
+                                <f:content>
+                                    <m:VBox width="100%" height="500px" class="sapUiSmallMargin">
+                                        <viz:VizFrame width="100%" height="500px" vizType="stacked_column" vizProperties="{DashboardModel>/stacked_column}">
+                                            <viz:dataset>
+                                                <viz.data:FlattenedDataset data="{indicadores/0/DatosKPIs/0/datos}">
+                                                    <viz.data:dimensions>
+                                                        <viz.data:DimensionDefinition name="Categoria" value="{Categoria}"/>
+                                                    </viz.data:dimensions>
+                                                    <viz.data:measures>
+                                                        <viz.data:MeasureDefinition name="Niños" value="{Niños}"/>
+                                                        <viz.data:MeasureDefinition name="Niñas" value="{Niñas}"/>
+                                                        <viz.data:MeasureDefinition name="Adolecentes" value="{Adolecentes}"/>
+                                                    </viz.data:measures>
+                                                </viz.data:FlattenedDataset>
+                                            </viz:dataset>
+                                            <viz:feeds>
+                                                <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Niños,Niñas,Adolecentes"/>
+                                                <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Categoria"/>
+                                            </viz:feeds>
+                                        </viz:VizFrame>
+                                    </m:VBox>
+                                </f:content>
+                            </f:Card>
+                        </m:HBox>
+                    </m:VBox>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+    <ObjectPageSection title="{i18n>sec_ods4_ind2}" visible="{= ${Id} === 'ODS4'}">
+        <subSections>
+            <ObjectPageSubSection>
+                <blocks>
+                    <m:VBox>
+                        <f:Card class="sapUiTinyMargin" width="100%">
+                            <f:customData>
+                                <core:CustomData key="cardods" value="{Id}" writeToDom="true"></core:CustomData>
+                            </f:customData>
+                            <f:content>
+                                <m:VBox width="100%" class="sapUiSmallMargin">
+                                    <m:Title class="textoDetalleBlanco" text="{indicadores/1/descripcion}" wrapping="true"/>
+                                </m:VBox>
+                            </f:content>
+                        </f:Card>
+
+                        <m:HBox width="100%" wrap="Wrap">
+                            <f:Card class="sapUiTinyMargin" width="400px">
+                                <f:header>
+                                    <card:Header title="{indicadores/1/DatosKPIs/0/titulo}" subtitle="{indicadores/1/DatosKPIs/0/subTitulo}"/>
+                                </f:header>
+                                <f:content>
+                                    <m:VBox width="100%" height="500px" class="sapUiSmallMargin">
+                                        <viz:VizFrame width="100%" height="500px" vizType="stacked_column" vizProperties="{DashboardModel>/stacked_column}">
+                                            <viz:dataset>
+                                                <viz.data:FlattenedDataset data="{indicadores/1/DatosKPIs/0/datos}">
+                                                    <viz.data:dimensions>
+                                                        <viz.data:DimensionDefinition name="Categoria" value="{Categoria}"/>
+                                                    </viz.data:dimensions>
+                                                    <viz.data:measures>
+                                                        <viz.data:MeasureDefinition name="Niños" value="{Niños}"/>
+                                                        <viz.data:MeasureDefinition name="Niñas" value="{Niñas}"/>
+                                                    </viz.data:measures>
+                                                </viz.data:FlattenedDataset>
+                                            </viz:dataset>
+                                            <viz:feeds>
+                                                <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Niños,Niñas"/>
+                                                <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Categoria"/>
+                                            </viz:feeds>
+                                        </viz:VizFrame>
+                                    </m:VBox>
+                                </f:content>
+                            </f:Card>
+
+                            <f:Card class="sapUiTinyMargin" width="400px">
+                                <f:header>
+                                    <card:Header title="{indicadores/1/DatosKPIs/1/titulo}" subtitle="{indicadores/1/DatosKPIs/1/subTitulo}"/>
+                                </f:header>
+                                <f:content>
+                                    <m:VBox width="100%" height="500px" class="sapUiSmallMargin">
+                                        <viz:VizFrame width="100%" height="500px" vizType="donut" vizProperties="{DashboardModel>/donut}">
+                                            <viz:dataset>
+                                                <viz.data:FlattenedDataset data="{indicadores/1/DatosKPIs/1/datos}">
+                                                    <viz.data:dimensions>
+                                                        <viz.data:DimensionDefinition name="Categoria" value="{Categoria}"/>
+                                                    </viz.data:dimensions>
+                                                    <viz.data:measures>
+                                                        <viz.data:MeasureDefinition name="Cantidad" value="{Cantidad}"/>
+                                                    </viz.data:measures>
+                                                </viz.data:FlattenedDataset>
+                                            </viz:dataset>
+                                            <viz:feeds>
+                                                <viz.feeds:FeedItem uid="size" type="Measure" values="Cantidad"/>
+                                                <viz.feeds:FeedItem uid="color" type="Dimension" values="Categoria"/>
+                                            </viz:feeds>
+                                        </viz:VizFrame>
+                                    </m:VBox>
+                                </f:content>
+                            </f:Card>
+                        </m:HBox>
+                    </m:VBox>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+    <ObjectPageSection title="{i18n>sec_ods4_ind3}" visible="{= ${Id} === 'ODS4'}">
+        <subSections>
+            <ObjectPageSubSection>
+                <blocks>
+                    <m:VBox>
+                        <f:Card class="sapUiTinyMargin" width="100%">
+                            <f:customData>
+                                <core:CustomData key="cardods" value="{Id}" writeToDom="true"></core:CustomData>
+                            </f:customData>
+                            <f:content>
+                                <m:VBox width="100%" class="sapUiSmallMargin">
+                                    <m:Title class="textoDetalleBlanco" text="{indicadores/2/descripcion}" wrapping="true"/>
+                                </m:VBox>
+                            </f:content>
+                        </f:Card>
+
+                        <m:HBox width="100%" wrap="Wrap">
+                            <f:Card class="sapUiTinyMargin" width="800px">
+                                <f:header>
+                                    <card:Header title="{indicadores/2/DatosKPIs/0/titulo}" subtitle="{indicadores/2/DatosKPIs/0/subTitulo}"/>
+                                </f:header>
+                                <f:content>
+                                    <m:VBox width="100%" height="350px" class="sapUiSmallMargin">
+                                        <viz:VizFrame width="100%" height="350px" vizType="area" vizProperties="{DashboardModel>/area}">
+                                            <viz:dataset>
+                                                <viz.data:FlattenedDataset data="{indicadores/2/DatosKPIs/0/datos}">
+                                                    <viz.data:dimensions>
+                                                        <viz.data:DimensionDefinition name="Mes" value="{Categoria}"/>
+                                                    </viz.data:dimensions>
+                                                    <viz.data:measures>
+                                                        <viz.data:MeasureDefinition name="Jovenes" value="{Jovenes}"/>
+                                                        <viz.data:MeasureDefinition name="Adultos" value="{Adultos}"/>
+                                                    </viz.data:measures>
+                                                </viz.data:FlattenedDataset>
+                                            </viz:dataset>
+                                            <viz:feeds>
+                                                <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Jovenes,Adultos"/>
+                                                <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Mes"/>
+                                            </viz:feeds>
+                                        </viz:VizFrame>
+                                    </m:VBox>
+                                </f:content>
+                            </f:Card>
                         </m:HBox>
                     </m:VBox>
                 </blocks>

@@ -6,10 +6,182 @@
             "subTitulo": "Educación de calidad",
             "descripcion": "<p>Tenemos una fuerte vocaci&oacute;n de ser una de las mejores empresas para el mundo y estamos comprometidos con la generaci&oacute;n de valor a trav&eacute;s de la tecnolog&iacute;a.<br /><br />Nuestras Metas:<br />Contribuir en el proceso de transformaci&oacute;n digital de nuestros clientes para su desarrollo y crecimiento.<br /><br />Ofrecer soluciones a trav&eacute;s de un proceso de constante innovaci&oacute;n tecnol&oacute;gica para el crecimiento sostenible de nuestros clientes y de la sociedad.</p>",
             "actRealizadas": "25",
-            "indicador1": {
-                "descripcion": "1 - De aquí a 2030, asegurar que todas las niñas y todos los niños terminen la enseñanza primaria y secundaria, que ha de ser gratuita, equitativa y de calidad y producir resultados de aprendizaje pertinentes y efectivos",
-                "datos": ""
-            }
+            "indicadores": [
+                {   
+                    "id": "1",
+                    "descripcion": "De aquí a 2030, asegurar que todas las niñas y todos los niños terminen la enseñanza primaria y secundaria, que ha de ser gratuita, equitativa y de calidad y producir resultados de aprendizaje pertinentes y efectivos",
+                    "DatosKPIs": [
+                        {
+                            "datos": [
+                                {
+                                    "idIndicadorODS": "1",
+                                    "Categoria": "En segundo y tercero",
+                                    "Niños": 431000.00,
+                                    "Niñas": 230000.00,
+                                    "Adolecentes": 300000.00
+                                },
+                                {
+                                    "idIndicadorODS": "1",
+                                    "Categoria": "En el final de la primaria",
+                                    "Niños": 331000.00,
+                                    "Niñas": 330000.00,
+                                    "Adolecentes": 400000.00
+                                },
+                                {
+                                    "idIndicadorODS": "1",
+                                    "Categoria": "En el final de la secundaria",
+                                    "Niños": 500000.00,
+                                    "Niñas": 230000.00,
+                                    "Adolecentes": 600000.00
+                                }
+                            ],
+                            "titulo": "1.1",
+                            "subTitulo": "Proporción de niños, niñas y adolescentes"
+                        }
+                    ]
+                },
+                {
+                    "id": "2",
+                    "descripcion": "De aquí a 2030, asegurar que todas las niñas y todos los niños tengan acceso a servicios de atención y desarrollo en la primera infancia y educación preescolar de calidad, a fin de que estén preparados para la enseñanza primaria",
+                    "DatosKPIs": [
+                        {
+                            "datos": [
+                                {
+                                    "idIndicadorODS": "2.1",
+                                    "Categoria": "Total",
+                                    "Niños": 4700000.00,
+                                    "Niñas": 4346000.00
+                                },
+                                {
+                                    "idIndicadorODS": "2.1",
+                                    "Categoria": "Salud",
+                                    "Niños": 3456000.00,
+                                    "Niñas": 2990000.00
+                                },
+                                {
+                                    "idIndicadorODS": "2.1",
+                                    "Categoria": "Aprendizaje",
+                                    "Niños": 2331000.00,
+                                    "Niñas": 2815000.00
+                                },
+                                {
+                                    "idIndicadorODS": "2.1",
+                                    "Categoria": "Bienestar psicosocial",
+                                    "Niños": 3300000.00,
+                                    "Niñas": 2146000.00
+                                }
+                            ],
+                            "titulo": "2.1",
+                            "subTitulo": "Niños menores de 5 años cuyo desarrollo es adecuado en cuanto a"
+                        },
+                        {
+                            "datos": [
+                                {
+                                    "idIndicadorODS": "2.2",
+                                    "Categoria": "Sin Participación",
+                                    "Cantidad": 1564235.00
+                                },
+                                {
+                                    "idIndicadorODS": "2.2",
+                                    "Categoria": "Niños",
+                                    "Cantidad": 2570913.00
+                                },
+                                {
+                                    "idIndicadorODS": "2.2",
+                                    "Categoria": "Niñas",
+                                    "Cantidad": 2993322.00
+                                }
+                            ],
+                            "titulo": "2.2",
+                            "subTitulo": "Participación en el aprendizaje organizado (un año antes de la edad oficial de ingreso en la enseñanza primaria)"
+                        }
+                    ]
+                },
+                {
+                    "id": "3",
+                    "descripcion": "De aquí a 2030, asegurar el acceso igualitario de todos los hombres y las mujeres a una formación técnica, profesional y superior de calidad, incluida la enseñanza universitaria ",
+                    "DatosKPIs": [
+                        {
+                            "datos": [
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Ene (2021)",
+                                    "Jovenes": 4700000.00,
+                                    "Adultos": 4346000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Feb (2021)",
+                                    "Jovenes": 4564333.00,
+                                    "Adultos": 4042000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Mar (2021)",
+                                    "Jovenes": 4100000.00,
+                                    "Adultos": 4146000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Abr (2021)",
+                                    "Jovenes": 3700000.00,
+                                    "Adultos": 3346000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "May (2021)",
+                                    "Jovenes": 5000000.00,
+                                    "Adultos": 4746000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Jun (2021)",
+                                    "Jovenes": 4700000.00,
+                                    "Adultos": 4346000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Jul (2021)",
+                                    "Jovenes": 5100000.00,
+                                    "Adultos": 5046000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Ago (2021)",
+                                    "Jovenes": 5270000.00,
+                                    "Adultos": 5155000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Sep (2021)",
+                                    "Jovenes": 5400000.00,
+                                    "Adultos": 5206000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Oct (2021)",
+                                    "Jovenes": 5540000.00,
+                                    "Adultos": 5634000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Nov (2021)",
+                                    "Jovenes": 4700000.00,
+                                    "Adultos": 4346000.00
+                                },
+                                {
+                                    "idIndicadorODS": "3",
+                                    "Categoria": "Dic (2021)",
+                                    "Jovenes": 5500000.00,
+                                    "Adultos": 5246000.00
+                                }
+                            ],
+                            "titulo": "3.1",
+                            "subTitulo": "Participación en la enseñanza y formación académica y no académica"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "Id": "ODS5",

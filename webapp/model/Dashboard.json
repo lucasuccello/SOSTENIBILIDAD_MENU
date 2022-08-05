@@ -1,155 +1,90 @@
 {
-	"stackedColumn": {
-		"sap.app": {
-			"id": "sample.CardsLayout.model.Analytical",
-			"type": "card"
-		},
-		"sap.card": {
-			"type": "Analytical",
-			"header": {
-				"title": "Educación de calidad",
-                "subTitle": "Grafico 2",
-                "icon": {
-                    "src": "{view>/rootPath}/images/IconDetailODS4.png"
-                }
-			},
-			"content": {
-				"chartType": "StackedColumn",
-				"legend": {
-					"visible": true,
-					"position": "Bottom",
-					"alignment": "Left"
-				},
-				"plotArea": {
-					"dataLabel": {
-						"visible": false,
-						"showTotal": false
-					},
-					"categoryAxisText": {
-						"visible": false
-					},
-					"valueAxisText": {
-						"visible": false
-					}
-				},
-				"title": {
-					"visible": false
-				},
-				"measureAxis": "valueAxis",
-				"dimensionAxis": "categoryAxis",
-				"data": {
-					"json": {
-						"list": [
-							{
-								"Category": "Valor 1",
-								"Unidad 1": 431000.22,
-								"Unidad 2": 230000.00
-							},
-							{
-								"Category": "Valor 2",
-								"Unidad 1": 494000.30,
-								"Unidad 2": 238000.00
-							},
-							{
-								"Category": "Valor 3",
-								"Unidad 1": 491000.17,
-								"Unidad 2": 221000.00
-							}
-						]
-					},
-					"path": "/list"
-				},
-				"dimensions": [
-					{
-						"label": "Categories",
-						"value": "{Category}"
-					}
-				],
-				"measures": [
-					{
-						"label": "Unidad 1",
-						"value": "{Unidad 1}"
-					},
-					{
-						"label": "Unidad 2",
-						"value": "{Unidad 2}"
-					}
-				]
-			}
-		}
-	},
-	"donut": {
-		"sap.app": {
-			"id": "sample.CardsLayout.model.donut",
-			"type": "card"
-		},
-		"sap.card": {
-			"type": "Analytical",
-			"header": {
-                "title": "Educación de calidad",
-                "subTitle": "Grafico 1",
-                "icon": {
-                    "src": "{view>/rootPath}/images/IconDetailODS4.png"
-                }
-			},
-			"content": {
-				"chartType": "Donut",
-				"legend": {
-					"visible": true,
-					"position": "Bottom",
-					"alignment": "Left"
-				},
-				"plotArea": {
-					"dataLabel": {
-						"visible": true,
-						"showTotal": true
-					}
-				},
-				"title": {
-					"visible": false
-				},
-				"measureAxis": "size",
-				"dimensionAxis": "color",
-				"data": {
-					"json": {
-						"measures": [
-							{
-								"measureName": "Valor 1",
-								"value": 1564235.29
-							},
-							{
-								"measureName": "Valor 1",
-								"value": 157913.07
-							},
-							{
-								"measureName": "Valor 2",
-								"value": 1085567.22
-							},
-							{
-								"measureName": "Valor 2",
-								"value": 245609.486884
-							},
-							{
-								"measureName": "Valor 3",
-								"value": 345292.06
-							},
-							{
-								"measureName": "Valor 3",
-								"value": 82922.07
-							}
-						]
-					},
-					"path": "/measures"
-				},
-				"dimensions": [{
-					"label": "Measure Name",
-					"value": "{measureName}"
-				}],
-				"measures": [{
-					"label": "Value",
-					"value": "{value}"
-				}]
-			}
-		}
-	}
+    "stacked_column": {
+        "plotArea": {
+            "window": {
+                "start": "firstDataPoint",
+                "end": "lastDataPoint"
+            },
+            "dataLabel": {
+                "formatString": "SHORTFLOAT_MFD2",
+                "visible": false
+            },
+            "colorPalette": ["#77E5D5", "#6954F3", "#353544"]
+        },
+        "valueAxis": {
+            "visible": true,
+            "title": {
+                "visible": true
+            }
+        },
+        "categoryAxis": {
+            "title": {
+                "visible": true
+            }
+        },
+        "title": {
+            "visible": false
+        },
+        "interaction": {
+            "syncValueAxis": false
+        }
+    },
+    "donut": {
+        "plotArea": {
+            "drawingEffect": "glossy",
+            "dataLabel": {
+                "visible": true,
+                "type": "value"
+            },
+            "colorPalette": ["#77E5D5", "#6954F3", "#353544"]
+        },
+        "dataLabel": {
+            "visible": true
+        },
+        "tooltip": {
+            "visible": true,
+            "bodyMeasureValue": {
+                "type": "valueAndPercentage"
+            }
+        },
+        "title": {
+            "visible": false
+        },
+        "legendGroup": {
+            "layout": {
+                "alignment": "center",
+                "position": "bottom"
+            }
+        },
+        "legend": {
+            "showFullLabel": true,
+            "visible": true
+        }
+    },
+    "area": {
+        "plotArea": {
+            "dataLabel": {
+                "formatString": "SHORTFLOAT_MFD2",
+                "visible": false
+            },
+            "colorPalette": ["#77E5D5", "#6954F3", "#353544"]
+        },
+        "valueAxis": {
+            "visible": true,
+            "title": {
+                "visible": true
+            }
+        },
+        "categoryAxis": {
+            "title": {
+                "visible": true
+            }
+        },
+        "title": {
+            "visible": false
+        },
+        "interaction": {
+            "syncValueAxis": false
+        }
+    }
 }

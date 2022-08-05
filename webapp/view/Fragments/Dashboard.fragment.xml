@@ -4,44 +4,8 @@
     xmlns:card="sap.f.cards"
     xmlns:w="sap.ui.integration.widgets">
     <VBox>
-        <HBox width="100%" wrap="Wrap">
-
-            <f:Card class="sapUiTinyMargin" width="400px">
-                <f:header>
-                    <card:Header title="Objetivos de sustentabilidad" subtitle="Lista 1"/>
-                </f:header>
-                <f:content>
-                    <VBox width="100%">
-                        <List>
-                            <items>
-                                <StandardListItem highlight="Information" title="ODS 4 - Educación de calidad" icon="{view>/rootPath}/images/IconODS4.png" adaptTitleSize="true"/>
-
-                                <StandardListItem highlight="Information" title="ODS 5 - Igualdad de género" icon="{view>/rootPath}/images/IconODS5.png" adaptTitleSize="true"/>
-
-                                <StandardListItem highlight="Information" title="ODS 8 - Trabajo decente y crecimiento económico" icon="{view>/rootPath}/images/IconODS8.png" adaptTitleSize="true"/>
-
-                                <StandardListItem highlight="Information" title="ODS 9 - Industria, innovación e infraestructura" icon="{view>/rootPath}/images/IconODS9.png" adaptTitleSize="true"/>
-
-                                <StandardListItem highlight="Information" title="ODS 13 - Acción por el clima" icon="{view>/rootPath}/images/IconODS13.png" adaptTitleSize="true"/>
-
-                                <StandardListItem highlight="Information" title="ODS 17 - Alianzas para lograr los objetivos" icon="{view>/rootPath}/images/IconODS17.jpg" adaptTitleSize="true"/>
-                            </items>
-                        </List>
-                    </VBox>
-                </f:content>
-            </f:Card>
-
-            <w:Card class="sapUiTinyMargin" manifest="{DashboardModel>/donut}" width="300px" height="400px">
-                <w:layoutData>
-                    <f:GridContainerItemLayoutData rows="4" columns="4" />
-                </w:layoutData>
-            </w:Card>
-
-            <w:Card class="sapUiTinyMargin" manifest="{DashboardModel>/stackedColumn}" width="300px" height="400px">
-                <w:layoutData>
-                    <f:GridContainerItemLayoutData rows="4" columns="4" />
-                </w:layoutData>
-            </w:Card>
-        </HBox>
+        <VBox class="sapUiSmallMarginBottom">
+            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.KPIsODS.KPIsODS4" type="XML"/>
+        </VBox>
     </VBox>
 </core:FragmentDefinition>

@@ -140,3 +140,7 @@ div[data-cardods="ODS17"] {
     letter-spacing: .5px !important;
     color: white;
 }
+
+.panel>.sapMPanelWrappingDivTb {
+    border-style: hidden;
+}

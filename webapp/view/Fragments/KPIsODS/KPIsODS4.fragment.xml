@@ -2,12 +2,122 @@
     xmlns:core="sap.ui.core"
     xmlns:f="sap.f"
     xmlns:card="sap.f.cards"
-    xmlns:w="sap.ui.integration.widgets">
-    <HBox width="100%" wrap="Wrap">
-        <w:Card class="sapUiTinyMargin" manifest="{DashboardModel>/donut}" width="300px" height="400px">
-            <w:layoutData>
-                <f:GridContainerItemLayoutData rows="4" columns="4" />
-            </w:layoutData>
-        </w:Card>
-    </HBox>
+    xmlns:w="sap.ui.integration.widgets"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:commons="sap.suite.ui.commons">
+    <VBox width="100%" binding="{/ODSList/0}">
+        <Image class="sapUiSmallMarginBottom" src="{view>/rootPath}/images/{Id}/Banner.jpg" width="100%"/>
+
+        <HBox width="100%" wrap="Wrap">
+            <f:Card class="sapUiTinyMargin" width="400px">
+                <f:header>
+                    <card:Header title="{indicadores/0/DatosKPIs/0/titulo}" subtitle="{indicadores/0/DatosKPIs/0/subTitulo}"/>
+                </f:header>
+                <f:content>
+                    <VBox width="100%" height="500px" class="sapUiSmallMargin">
+                        <viz:VizFrame width="100%" height="500px" vizType="stacked_column" vizProperties="{DashboardModel>/stacked_column}">
+                            <viz:dataset>
+                                <viz.data:FlattenedDataset data="{indicadores/0/DatosKPIs/0/datos}">
+                                    <viz.data:dimensions>
+                                        <viz.data:DimensionDefinition name="Categoria" value="{Categoria}"/>
+                                    </viz.data:dimensions>
+                                    <viz.data:measures>
+                                        <viz.data:MeasureDefinition name="Niños" value="{Niños}"/>
+                                        <viz.data:MeasureDefinition name="Niñas" value="{Niñas}"/>
+                                        <viz.data:MeasureDefinition name="Adolecentes" value="{Adolecentes}"/>
+                                    </viz.data:measures>
+                                </viz.data:FlattenedDataset>
+                            </viz:dataset>
+                            <viz:feeds>
+                                <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Niños,Niñas,Adolecentes"/>
+                                <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Categoria"/>
+                            </viz:feeds>
+                        </viz:VizFrame>
+                    </VBox>
+                </f:content>
+            </f:Card>
+
+            <f:Card class="sapUiTinyMargin" width="400px">
+                <f:header>
+                    <card:Header title="{indicadores/1/DatosKPIs/0/titulo}" subtitle="{indicadores/1/DatosKPIs/0/subTitulo}"/>
+                </f:header>
+                <f:content>
+                    <VBox width="100%" height="500px" class="sapUiSmallMargin">
+                        <viz:VizFrame width="100%" height="500px" vizType="stacked_column" vizProperties="{DashboardModel>/stacked_column}">
+                            <viz:dataset>
+                                <viz.data:FlattenedDataset data="{indicadores/1/DatosKPIs/0/datos}">
+                                    <viz.data:dimensions>
+                                        <viz.data:DimensionDefinition name="Categoria" value="{Categoria}"/>
+                                    </viz.data:dimensions>
+                                    <viz.data:measures>
+                                        <viz.data:MeasureDefinition name="Niños" value="{Niños}"/>
+                                        <viz.data:MeasureDefinition name="Niñas" value="{Niñas}"/>
+                                    </viz.data:measures>
+                                </viz.data:FlattenedDataset>
+                            </viz:dataset>
+                            <viz:feeds>
+                                <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Niños,Niñas"/>
+                                <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Categoria"/>
+                            </viz:feeds>
+                        </viz:VizFrame>
+                    </VBox>
+                </f:content>
+            </f:Card>
+
+            <f:Card class="sapUiTinyMargin" width="400px">
+                <f:header>
+                    <card:Header title="{indicadores/1/DatosKPIs/1/titulo}" subtitle="{indicadores/1/DatosKPIs/1/subTitulo}"/>
+                </f:header>
+                <f:content>
+                    <VBox width="100%" height="500px" class="sapUiSmallMargin">
+                        <viz:VizFrame width="100%" height="500px" vizType="donut" vizProperties="{DashboardModel>/donut}">
+                            <viz:dataset>
+                                <viz.data:FlattenedDataset data="{indicadores/1/DatosKPIs/1/datos}">
+                                    <viz.data:dimensions>
+                                        <viz.data:DimensionDefinition name="Categoria" value="{Categoria}"/>
+                                    </viz.data:dimensions>
+                                    <viz.data:measures>
+                                        <viz.data:MeasureDefinition name="Cantidad" value="{Cantidad}"/>
+                                    </viz.data:measures>
+                                </viz.data:FlattenedDataset>
+                            </viz:dataset>
+                            <viz:feeds>
+                                <viz.feeds:FeedItem uid="size" type="Measure" values="Cantidad"/>
+                                <viz.feeds:FeedItem uid="color" type="Dimension" values="Categoria"/>
+                            </viz:feeds>
+                        </viz:VizFrame>
+                    </VBox>
+                </f:content>
+            </f:Card>
+
+            <f:Card class="sapUiTinyMargin" width="800px">
+                <f:header>
+                    <card:Header title="{indicadores/2/DatosKPIs/0/titulo}" subtitle="{indicadores/2/DatosKPIs/0/subTitulo}"/>
+                </f:header>
+                <f:content>
+                    <VBox width="100%" height="350px" class="sapUiSmallMargin">
+                        <viz:VizFrame width="100%" height="350px" vizType="area" vizProperties="{DashboardModel>/area}">
+                            <viz:dataset>
+                                <viz.data:FlattenedDataset data="{indicadores/2/DatosKPIs/0/datos}">
+                                    <viz.data:dimensions>
+                                        <viz.data:DimensionDefinition name="Mes" value="{Categoria}"/>
+                                    </viz.data:dimensions>
+                                    <viz.data:measures>
+                                        <viz.data:MeasureDefinition name="Jovenes" value="{Jovenes}"/>
+                                        <viz.data:MeasureDefinition name="Adultos" value="{Adultos}"/>
+                                    </viz.data:measures>
+                                </viz.data:FlattenedDataset>
+                            </viz:dataset>
+                            <viz:feeds>
+                                <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Jovenes,Adultos"/>
+                                <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Mes"/>
+                            </viz:feeds>
+                        </viz:VizFrame>
+                    </VBox>
+                </f:content>
+            </f:Card>
+        </HBox>
+    </VBox>
 </core:FragmentDefinition>
