@@ -9,7 +9,7 @@
     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns:viz.data="sap.viz.ui5.data"
     xmlns:commons="sap.suite.ui.commons">
-    <ObjectPageSection title="{i18n>sec_ods4_conf}" visible="{= ${Id} === 'ODS4'}">
+    <ObjectPageSection title="{i18n>sec_ods4_conf}" visible="{= ${Id} === 'ODS4'}" id="CON_ODS4">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>
@@ -35,7 +35,7 @@
                                                     </m:headerToolbar>
                                                     <m:content>
                                                         <m:VBox width="100%">
-                                                            <f:GridList headerText="Informacón de KPI's" items="{ODSModelDetail>datos}">
+                                                            <f:GridList headerText="Información de KPI's" items="{ODSModelDetail>datos}">
                                                                 <f:GridListItem>
                                                                     <m:VBox class="sapUiSmallMargin">
                                                                         <m:layoutData>

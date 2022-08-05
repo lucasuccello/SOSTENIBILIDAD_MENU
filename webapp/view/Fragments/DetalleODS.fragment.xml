@@ -4,8 +4,8 @@
 	<ObjectPageLayout id="pageDetalle" useIconTabBar="true"
 		showTitleInHeaderContent="true"
 		showEditHeaderButton="true"
-		editHeaderButtonPress="handleEditBtnPress"
-		upperCaseAnchorBar="false" showFooter="true">
+		editHeaderButtonPress="handleEditBtnPress" navigate="onChangeSection"
+		upperCaseAnchorBar="false" showFooter="{view>/showFooter}">
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
 

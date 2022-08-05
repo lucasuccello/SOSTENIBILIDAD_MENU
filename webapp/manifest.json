@@ -106,7 +106,7 @@
                 }
             },
             "": {
-                "dataSource": "mainService",
+                "dataSource": "ODSDatasource",
                 "preload": true,
                 "settings": {}
             },

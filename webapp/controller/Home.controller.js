@@ -17,7 +17,8 @@ sap.ui.define([
             var oViewModel = new JSONModel({
                 isPhone: Device.system.phone,
                 selectedMenuItem: "I",
-                rootPath: oRootPath
+                rootPath: oRootPath,
+                showFooter: true
             });
             this.getView().setModel(oViewModel, "view");
 
@@ -59,14 +60,18 @@ sap.ui.define([
             sPath = oBindingContext.getPath();
             
             //setear modelo default con el local (quitar esto cuando conecte con un odata)
-            oController.byId("pageDetalle").setModel(this.getModel("ODSModel"));
-            oController.byId("pageDetalle").bindObject(sPath);
+            // oController.byId("pageDetalle").setModel(this.getModel("ODSModel")); //se ajustó en el manifest como modelo principal
+            // oController.byId("pageDetalle").bindObject(sPath);
 
             //modelo local usado para agarrar los cambios que se hagan en configuraciones
             this.getModel("ODSModelDetail").setData(oODS);
 
             //"navegar" a vista de detalle
-            oController.byId("pageContainer").to(oController.getView().createId('O'));
+            // oController.byId("pageContainer").to(oController.getView().createId('O'));
+            //ajuste para que funcione deployado en launchpad
+            let sIdPage = this.getView().createId("O");
+            this.byId(sIdPage).bindObject(sPath);
+            this.byId("pageContainer").to(sIdPage);
         },
 
         onOpenDialogDetail: function(oEvent){
@@ -95,14 +100,23 @@ sap.ui.define([
 		},
 
         onSave: function(oEvent){
-            var sPathODS = oController.byId("pageDetalle").getBindingContext().getPath(),
+            var oView = this.byId(this.getView().createId("O")),
+                sPathODS = oView.getBindingContext().getPath(),
                 oData = this.getModel("ODSModelDetail").getData();
             
-            oController.byId("pageDetalle").getModel().setProperty(sPathODS, oData);
-            oController.byId("pageDetalle").getModel().refresh(true);
+            oView.getModel().setProperty(sPathODS, oData);
+            oView.getModel().refresh(true);
 
             MessageToast.show("Datos actualizados exitosamente");
-        }
+        },
+
+        onChangeSection: function(oEvent){
+            if(oEvent.getParameter("section").getId().includes('CON')){
+                this.getModel("view").setProperty("/showFooter", true);
+            } else{
+                this.getModel("view").setProperty("/showFooter", false);
+            }
+        },
 
         // _cargarKpis: function(oODS){
         //     //armar card de graficos
