@@ -6,7 +6,7 @@
     xmlns:tnt="sap.tnt"
     xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:u="sap.uxap">
     <App id="App">
-        <tnt:ToolPage >
+        <tnt:ToolPage id="toolPage">
             <!-- <tnt:header>
                 <tnt:ToolHeader>
                     <Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" press=".onSideNavButtonPress">
@@ -19,6 +19,7 @@
             <tnt:sideContent>
                 <tnt:SideNavigation>
                     <tnt:NavigationList itemSelect="onSelectItem" selectedKey="{view>/selectedMenuItem}">
+                        <tnt:NavigationListItem key="E" icon="sap-icon://menu2"/>
                         <tnt:NavigationListItem key="I" text="{i18n>menu_inicio}" icon="sap-icon://home"/>
                         <tnt:NavigationListItem key="C" text="{i18n>menu_compromiso}" icon="sap-icon://decision"/>
                         <tnt:NavigationListItem expanded="false" key="D" text="{i18n>menu_dash}" icon="sap-icon://kpi-corporate-performance">

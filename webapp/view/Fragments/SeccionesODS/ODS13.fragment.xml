@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.uxap" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" height="100%"
     xmlns:f="sap.f"
     xmlns:card="sap.f.cards">
-    <ObjectPageSection title="{i18n>sec_ods4_conf}" visible="{= ${Id} === 'ODS13'}" id="CON_ODS13">
+    <ObjectPageSection title="{i18n>sec_conf}" visible="{= ${Id} === 'ODS13'}" id="CON_ODS13">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>
@@ -12,7 +12,7 @@
             </ObjectPageSubSection>
         </subSections>
     </ObjectPageSection>
-    <ObjectPageSection title="{i18n>sec_ods4_ind1}" visible="{= ${Id} === 'ODS13'}">
+    <ObjectPageSection title="{i18n>sec_ind1}" visible="{= ${Id} === 'ODS13'}">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>

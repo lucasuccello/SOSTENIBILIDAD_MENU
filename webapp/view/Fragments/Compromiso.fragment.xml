@@ -37,24 +37,24 @@
         <HBox width="100%" wrap="Wrap" justifyContent="Center" items="{ODSModel>/ODSList}">
             <items>
             <!-- <html:div class="sapUiSmallMargin" style="cursor: pointer;" onClick="sap.ui.controller('softtek.sostenibilidadmenu.controller.Home').onNavODS4()"> -->
-                <f:Card class="card sapUiSmallMargin {ODSModel>claseBackground}" width="auto" height="160px">
+                <f:Card class="card sapUiSmallMargin {ODSModel>claseBackground}" width="auto" height="200px">
                     <f:customData>
                         <core:CustomData key="cardods" value="{ODSModel>Id}" writeToDom="true"></core:CustomData>
                     </f:customData>
                     <f:content>
                         <HBox width="100%" wrap="Wrap">
                             <VBox>
-                                <Image src="{view>/rootPath}/images/{ODSModel>Id}/ImagenCard.jpg" height="160px"/>
+                                <Image src="{view>/rootPath}/images/{ODSModel>Id}/ImagenCard.jpg" height="200px"/>
                             </VBox>
                             <VBox height="160px">
-                                <Image src="{view>/rootPath}/images/{ODSModel>Id}/Icono.png" height="120px"/>
+                                <Image src="{view>/rootPath}/images/{ODSModel>Id}/Icono.png" height="165px"/>
                                 <HBox height="30px" width="100%" justifyContent="End">
-                                    <Button type="Emphasized" class="{ODSModel>claseBoton} sapUiTinyMarginEnd" icon="sap-icon://action-settings" press="onNavODSDetail">
+                                    <Button type="Emphasized" icon="sap-icon://action-settings" press="onNavODSDetail">
                                         <customData>
                                             <core:CustomData key="buttonods" value="{ODSModel>Id}" writeToDom="true"></core:CustomData>
                                         </customData>
                                     </Button>
-                                    <Button type="Emphasized" class="buttonODS4 sapUiTinyMarginEnd" icon="sap-icon://show" press="onOpenDialogDetail">
+                                    <Button type="Emphasized" icon="sap-icon://show" press="onOpenDialogDetail">
                                         <customData>
                                             <core:CustomData key="buttonods" value="{ODSModel>Id}" writeToDom="true"></core:CustomData>
                                         </customData>

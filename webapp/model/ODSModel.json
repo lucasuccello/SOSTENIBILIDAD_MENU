@@ -188,7 +188,51 @@
             "titulo": "Objetivo 5",
             "subTitulo": "Igualdad de género",
             "descripcion": "<p>La igualdad de g&eacute;nero es uno de los fundamentos esenciales para la prosperidad y la sostenibilidad. Para Softtek, generar equidad de oportunidades y condiciones para nuestras mujeres es trascendental.</p><p>Enfocamos esfuerzos en conjunto con otras organizaciones para:</p><ul><li>Generar condiciones de equidad en temas de liderazgo en todos los niveles.</li><li>Asegurar acceso a oportunidades equitativas en temas de salario y beneficios.</li><li>Facilitar el acceso al desarrollo profesional a trav&eacute;s del conocimiento y aprendizaje de la tecnolog&iacute;a.</li><li>Promover la inclusi&oacute;n de un mayor n&uacute;mero de mujeres en el campo de las tecnolog&iacute;as a trav&eacute;s de la educaci&oacute;n.</li></ul>",
-            "actRealizadas": "20"
+            "actRealizadas": "20",
+            "indicadores": [
+                {   
+                    "id": "1",
+                    "descripcion": "Determinar si existen o no marcos jurídicos para promover, hacer cumplir y supervisar la igualdad y la no discriminación por motivos de sexo",
+                    "DatosKPIs": [
+                        {
+                            "datos": [
+                                {
+                                    "idIndicadorODS": "1",
+                                    "Titulo": "Ley 26.510 de Educación Sexual Integral",
+                                    "Descripción": "establece el derecho de todos y todas lxs educandos a recibir educación sexual integral en los establecimientos educativos públicos, de gestión estatal y privada",
+                                    "Icono": "sap-icon://compare"
+                                },
+                                {
+                                    "idIndicadorODS": "1",
+                                    "Titulo": "Ley 26.485 de Protección Integral para Prevenir, Sancionar y Erradicar la Violencia contra las Mujeres",
+                                    "Descripción": "En los ámbitos en que desarrollen sus relaciones interpersonales.",
+                                    "Icono": "sap-icon://compare"
+                                },
+                                {
+                                    "idIndicadorODS": "1",
+                                    "Titulo": "Ley 26.618 de Matrimonio Igualitario y Ley 26.743 de Identidad de Género",
+                                    "Descripción": "Reconocen la identidad de género autopercibida de cada persona y su derecho a un trato digno, independientemente del sexo asignado al nacer y de sus registros identificatorios",
+                                    "Icono": "sap-icon://compare"
+                                },
+                                {
+                                    "idIndicadorODS": "1",
+                                    "Titulo": "Ley 27.412 de Paridad de Género en Ámbitos de Representación Política",
+                                    "Descripción": "constituyó otro avance para lograr reducir las brechas que sostienen las desigualdades por motivos de género",
+                                    "Icono": "sap-icon://compare"
+                                },
+                                {
+                                    "idIndicadorODS": "1",
+                                    "Titulo": "Ley 27.499 (conocida como Ley Micaela)",
+                                    "Descripción": "establece la capacitación obligatoria en las temáticas de género y violencias por motivos de género para todas las personas que se desempeñen en la función pública en todos sus niveles y jerarquías en los poderes Ejecutivo, Legislativo y Judicial de la Nación.",
+                                    "Icono": "sap-icon://compare"
+                                }
+                            ],
+                            "titulo": "1.1",
+                            "subTitulo": "Políticas de Género y Diversidad en Argentina"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "Id": "ODS8",

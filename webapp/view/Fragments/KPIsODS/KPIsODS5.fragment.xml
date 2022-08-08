@@ -3,11 +3,37 @@
     xmlns:f="sap.f"
     xmlns:card="sap.f.cards"
     xmlns:w="sap.ui.integration.widgets">
-    <HBox width="100%" wrap="Wrap">
-        <w:Card class="sapUiTinyMargin" manifest="{DashboardModel>/stackedColumn}" width="300px" height="400px">
-            <w:layoutData>
-                <f:GridContainerItemLayoutData rows="4" columns="4" />
-            </w:layoutData>
-        </w:Card>
-    </HBox>
+    <VBox width="100%" binding="{/ODSList/1}">
+        <VBox width="100%" class="sapUiSmallMarginBottom">
+            <customData>
+                <core:CustomData key="cardods" value="ODS5" writeToDom="true"></core:CustomData>
+            </customData>
+            <Image src="{view>/rootPath}/images/{Id}/Banner.jpg" width="50%"/>
+        </VBox>
+
+        <HBox width="100%" wrap="Wrap">
+            <f:Card class="sapUiTinyMargin" width="600px">
+                <f:header>
+                    <card:Header title="{indicadores/0/DatosKPIs/0/titulo}" subtitle="{indicadores/0/DatosKPIs/0/subTitulo}"/>
+                </f:header>
+                <f:content>
+                    <VBox width="100%">
+                        <List items="{indicadores/0/DatosKPIs/0/datos}">
+                            <items>
+                                <CustomListItem highlight="Success">
+                                    <HBox class="sapUiSmallMarginTopBottom" alignItems="Center">
+                                        <core:Icon size="2rem" src="{Icono}" class="sapUiTinyMarginBeginEnd"/>
+                                        <VBox>
+                                            <Title text="{Titulo}" titleStyle="H3" wrapping="true"/>
+                                            <Label text="{Descripción}" wrapping="true"/>
+                                        </VBox>
+                                    </HBox>
+                                </CustomListItem>
+                            </items>
+                        </List>
+                    </VBox>
+                </f:content>
+            </f:Card>
+        </HBox>
+    </VBox>
 </core:FragmentDefinition>

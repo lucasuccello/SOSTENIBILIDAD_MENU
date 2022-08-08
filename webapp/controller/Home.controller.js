@@ -24,7 +24,7 @@ sap.ui.define([
 
             //ODS Model detail
             var oODSModel = new JSONModel({});
-            this.getView().setModel(oODSModel, "ODSModelDetail");
+            this.setModel(oODSModel, "ODSModelDetail");
 
             this.setModel(this.getModel("ODSModel"));
 
@@ -38,10 +38,19 @@ sap.ui.define([
         },
         
         onSelectItem: function (oEvent) {
-			var sKey = oEvent.getParameter("item").getKey();
+			let sKey = oEvent.getParameter("item").getKey();
+            let oToolPage = this.byId("toolPage");
 
-            //"navegar" a tab seleccionado
-			this.byId("pageContainer").to(this.getView().createId(sKey));
+            if(sKey === 'E'){
+                //expandir o ocultar menu
+                let bSideExpanded = oToolPage.getSideExpanded();
+                oToolPage.setSideExpanded(!bSideExpanded);
+            } else {
+                //"navegar" a tab seleccionado
+			    this.byId("pageContainer").to(this.getView().createId(sKey));
+                //se oculta el menu
+                oToolPage.setSideExpanded(false);
+            }
 		},
 
         onNavODSDetail: function(oEvent){
@@ -75,7 +84,9 @@ sap.ui.define([
         },
 
         onOpenDialogDetail: function(oEvent){
-            let oODS = oEvent.getSource().getBindingContext("ODSModel").getObject();
+            let oBindingContext = oEvent.getSource().getBindingContext("ODSModel"),
+                oODS = oBindingContext.getObject(),
+                sPath = oBindingContext.getPath();
 
             //se setea modelo json con los datos del ODS seleccionado
             this.getModel("ODSModelDetail").setData(oODS);
@@ -91,6 +102,8 @@ sap.ui.define([
                     oEvent.getSource().destroy();
                 });
 
+                oController._oDialogDetail.setModel(oController.getModel("ODSModelDetail"),"ODSModelDetail");
+                oController._oDialogDetail.bindObject(sPath);
                 oController._oDialogDetail.open();
             });
         },

@@ -8,7 +8,12 @@
     xmlns:viz.data="sap.viz.ui5.data"
     xmlns:commons="sap.suite.ui.commons">
     <VBox width="100%" binding="{/ODSList/0}">
-        <Image class="sapUiSmallMarginBottom" src="{view>/rootPath}/images/{Id}/Banner.jpg" width="100%"/>
+        <VBox width="100%" class="sapUiSmallMarginBottom">
+            <customData>
+                <core:CustomData key="cardods" value="ODS4" writeToDom="true"></core:CustomData>
+            </customData>
+            <Image src="{view>/rootPath}/images/{Id}/Banner.jpg" width="50%"/>
+        </VBox>
 
         <HBox width="100%" wrap="Wrap">
             <f:Card class="sapUiTinyMargin" width="400px">

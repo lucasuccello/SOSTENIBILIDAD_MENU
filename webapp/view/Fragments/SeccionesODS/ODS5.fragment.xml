@@ -1,23 +1,121 @@
-<core:FragmentDefinition xmlns="sap.uxap" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" height="100%"
+<core:FragmentDefinition xmlns="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout"
+    xmlns:m="sap.m" height="100%"
     xmlns:f="sap.f"
-    xmlns:card="sap.f.cards">
-    <ObjectPageSection title="{i18n>sec_ods4_conf}" visible="{= ${Id} === 'ODS5'}" id="CON_ODS5">
+    xmlns:card="sap.f.cards"
+    xmlns:w="sap.ui.integration.widgets"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:commons="sap.suite.ui.commons">
+    <ObjectPageSection title="{i18n>sec_conf}" visible="{= ${Id} === 'ODS5'}" id="CON_ODS5">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>
                     <m:VBox>
-                        
+                        <f:Card class="sapUiTinyMargin" width="100%">
+                            <f:header>
+                                <card:Header title="{i18n>sec_conf}" iconSrc="sap-icon://action-settings"/>
+                            </f:header>
+                            <f:content>
+                                <m:VBox items="{ODSModelDetail>/indicadores}" width="100%">
+                                    <m:Panel class="panel" expandable="true">
+                                        <m:headerToolbar>
+                                            <m:OverflowToolbar>
+                                                <m:Text text="Indicador {ODSModelDetail>id}"/>
+                                            </m:OverflowToolbar>
+                                        </m:headerToolbar>
+                                        <m:content>
+                                            <m:VBox width="100%">
+                                                <m:Label text="Descripción:"/>
+                                                <m:TextArea width="100%" class="sapUiSmallMarginBottom" value="{ODSModelDetail>descripcion}" showExceededText="true" maxLength="300" valueState="{= ${ODSModelDetail>descripcion}.length > 300 ? 'Error' : 'None' }" valueLiveUpdate="true"/>
+                                                <m:VBox items="{ODSModelDetail>DatosKPIs}" width="100%">
+                                                    <m:Panel class="panel" expandable="true">
+                                                        <m:headerToolbar>
+                                                            <m:OverflowToolbar>
+                                                                <m:Text text="{ODSModelDetail>titulo} - {ODSModelDetail>subTitulo}"/>
+                                                            </m:OverflowToolbar>
+                                                        </m:headerToolbar>
+                                                        <m:content>
+                                                            <m:VBox width="100%">
+                                                                <f:GridList headerText="Información de KPI's" items="{ODSModelDetail>datos}">
+                                                                    <f:GridListItem>
+                                                                        <m:VBox class="sapUiSmallMargin">
+                                                                            <m:layoutData>
+                                                                                <m:FlexItemData growFactor="1" shrinkFactor="0" />
+                                                                            </m:layoutData>
+
+                                                                            <m:Title class="sapUiSmallMarginBottom" text="{ODSModelDetail>Categoria}" wrapping="true" />
+
+                                                                            <m:VBox visible="{= ${ODSModelDetail>idIndicadorODS} === '1'}" width="100%">
+                                                                                <m:VBox width="100%" class="sapUiTinyMarginBottom">
+                                                                                    <m:Label text="Título:"/>
+                                                                                    <m:Input value="{ODSModelDetail>Titulo}" width="100%"/>
+                                                                                </m:VBox>
+                                                                                <m:VBox width="100%" class="sapUiTinyMarginBottom">
+                                                                                    <m:Label text="Descripción:"/>
+                                                                                    <m:Input value="{ODSModelDetail>Descripción}" width="100%"/>
+                                                                                </m:VBox>
+                                                                            </m:VBox>
+                                                                        </m:VBox>
+                                                                    </f:GridListItem>
+                                                                </f:GridList>
+                                                            </m:VBox>
+                                                        </m:content>
+                                                    </m:Panel>
+                                                </m:VBox>
+                                            </m:VBox>
+                                        </m:content>
+                                    </m:Panel>
+                                </m:VBox>
+                            </f:content>
+                        </f:Card>
                     </m:VBox>
                 </blocks>
             </ObjectPageSubSection>
         </subSections>
     </ObjectPageSection>
-    <ObjectPageSection title="{i18n>sec_ods4_ind1}" visible="{= ${Id} === 'ODS5'}">
+    <ObjectPageSection title="{i18n>sec_ind1}" visible="{= ${Id} === 'ODS5'}">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>
                     <m:VBox>
-                        
+                        <f:Card class="sapUiTinyMargin" width="100%">
+                            <f:customData>
+                                <core:CustomData key="cardods" value="{Id}" writeToDom="true"></core:CustomData>
+                            </f:customData>
+                            <f:content>
+                                <m:VBox width="100%" class="sapUiSmallMargin">
+                                    <m:Title class="textoDetalleBlanco" text="{indicadores/0/descripcion}" wrapping="true"/>
+                                </m:VBox>
+                            </f:content>
+                        </f:Card>
+
+                        <m:HBox width="100%" wrap="Wrap">
+                            <f:Card class="sapUiTinyMargin" width="600px">
+                                <f:header>
+                                    <card:Header title="{indicadores/0/DatosKPIs/0/titulo}" subtitle="{indicadores/0/DatosKPIs/0/subTitulo}"/>
+                                </f:header>
+                                <f:content>
+                                    <m:VBox width="100%">
+                                        <m:List items="{indicadores/0/DatosKPIs/0/datos}">
+                                            <m:items>
+                                                <m:CustomListItem highlight="Information">
+                                                    <m:HBox class="sapUiSmallMarginTopBottom" alignItems="Center">
+                                                        <core:Icon size="2rem" src="{Icono}" class="sapUiTinyMarginBeginEnd"/>
+                                                        <m:VBox>
+                                                            <m:Title text="{Titulo}" titleStyle="H3" wrapping="true"/>
+                                                            <m:Label text="{Descripción}" wrapping="true"/>
+                                                        </m:VBox>
+                                                    </m:HBox>
+                                                </m:CustomListItem>
+                                            </m:items>
+                                        </m:List>
+                                    </m:VBox>
+                                </f:content>
+                            </f:Card>
+                        </m:HBox>
                     </m:VBox>
                 </blocks>
             </ObjectPageSubSection>

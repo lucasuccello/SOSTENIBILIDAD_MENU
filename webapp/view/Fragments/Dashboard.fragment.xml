@@ -7,5 +7,9 @@
         <VBox class="sapUiSmallMarginBottom">
             <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.KPIsODS.KPIsODS4" type="XML"/>
         </VBox>
+
+        <VBox class="sapUiSmallMarginBottom">
+            <core:Fragment fragmentName="softtek.sostenibilidadmenu.view.Fragments.KPIsODS.KPIsODS5" type="XML"/>
+        </VBox>
     </VBox>
 </core:FragmentDefinition>

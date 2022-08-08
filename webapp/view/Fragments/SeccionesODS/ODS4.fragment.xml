@@ -9,11 +9,14 @@
     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns:viz.data="sap.viz.ui5.data"
     xmlns:commons="sap.suite.ui.commons">
-    <ObjectPageSection title="{i18n>sec_ods4_conf}" visible="{= ${Id} === 'ODS4'}" id="CON_ODS4">
+    <ObjectPageSection title="{i18n>sec_conf}" visible="{= ${Id} === 'ODS4'}" id="CON_ODS4">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>
                     <f:Card class="sapUiTinyMargin" width="100%">
+                        <f:header>
+                            <card:Header title="{i18n>sec_conf}" iconSrc="sap-icon://action-settings"/>
+                        </f:header>
                         <f:content>
                             <m:VBox items="{ODSModelDetail>/indicadores}" width="100%">
                                 <m:Panel class="panel" expandable="true">
@@ -104,7 +107,7 @@
             </ObjectPageSubSection>
         </subSections>
     </ObjectPageSection>
-    <ObjectPageSection title="{i18n>sec_ods4_ind1}" visible="{= ${Id} === 'ODS4'}">
+    <ObjectPageSection title="{i18n>sec_ind1}" visible="{= ${Id} === 'ODS4'}">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>
@@ -177,7 +180,7 @@
             </ObjectPageSubSection>
         </subSections>
     </ObjectPageSection>
-    <ObjectPageSection title="{i18n>sec_ods4_ind2}" visible="{= ${Id} === 'ODS4'}">
+    <ObjectPageSection title="{i18n>sec_ind2}" visible="{= ${Id} === 'ODS4'}">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>
@@ -252,7 +255,7 @@
             </ObjectPageSubSection>
         </subSections>
     </ObjectPageSection>
-    <ObjectPageSection title="{i18n>sec_ods4_ind3}" visible="{= ${Id} === 'ODS4'}">
+    <ObjectPageSection title="{i18n>sec_ind3}" visible="{= ${Id} === 'ODS4'}">
         <subSections>
             <ObjectPageSubSection>
                 <blocks>
