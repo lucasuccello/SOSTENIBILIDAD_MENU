@@ -3,11 +3,13 @@
     xmlns:f="sap.f"
     xmlns:card="sap.f.cards"
     xmlns:html="http://www.w3.org/1999/xhtml">
+
+    <Image src="{view>/rootPath}/images/banner.jpg" width="100%" height="70%" />
     <VBox alignItems="Center">
-
-        <VBox width="100%" alignItems="Center">
-            <Title text="{i18n>ini_titAmb}" titleStyle="H1" wrapping="true" class="sapUiSmallMarginTopBottom"/>
-
+   
+        <!--<VBox width="100%" alignItems="Center">
+            <Title text="{i18n>ini_titAmb}" titleStyle="H1" wrapping="true" class="sapUiSmallMarginTopBottom"/> 
+            
             <HBox width="100%" wrap="Wrap" justifyContent="Center" class="sapUiSmallMarginTop">
                 <VBox class="sapUiMediumMarginEnd sapUiTinyMarginTopBottom" alignItems="Center" width="250px">
                     <Image src="{view>/rootPath}/images/Energia.svg" class="sapUiTinyMarginBottom"/>
@@ -29,10 +31,10 @@
                     <Title text="{i18n>ini_titEdificios}" titleStyle="H3" textAlign="Center" wrapping="true"/>
                 </VBox>
             </HBox>
-        </VBox>
+        </VBox> 
 
 
-        <Image class="sapUiSmallMarginTopBottom" src="{view>/rootPath}/images/BannerODS.png" width="450px"/>
+        <Image class="sapUiSmallMarginTopBottom" src="{view>/rootPath}/images/BannerODS.png" width="450px"/> -->
 
         <HBox width="100%" wrap="Wrap" justifyContent="Center" items="{ODSModel>/ODSList}">
             <items>

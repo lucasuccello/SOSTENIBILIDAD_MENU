@@ -3,11 +3,13 @@
     xmlns:f="sap.f"
     xmlns:card="sap.f.cards" height="100%">
     <VBox>
-        <Carousel loop="true" showPageIndicator="false" width="100%">
-            <Image src="{view>/rootPath}/images/homeImage_small.jpg" width="100%"/>
+        <Carousel loop="true" showPageIndicator="false">
+            <Image src="{view>/rootPath}/images/Home/ppt1.jpg" width="100%"/>
+            <Image src="{view>/rootPath}/images/Home/ppt2.jpg" width="100%"/>
+            <Image src="{view>/rootPath}/images/Home/ppt3.jpg" width="100%"/>
         </Carousel>
 
-        <VBox width="100%">
+        <!-- <VBox width="100%">
             <HBox justifyContent="Center" alignItems="Center" width="100%">
                 <Image src="{view>/rootPath}/images/icon_sustainability.png" width="500px"/>
                 <VBox>
@@ -60,6 +62,6 @@
                     </HBox>
                 </VBox>
             </HBox>
-        </VBox>
+        </VBox> -->
     </VBox>
 </core:FragmentDefinition>

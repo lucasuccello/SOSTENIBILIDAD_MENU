@@ -33,27 +33,33 @@ sap.ui.define([
             }.bind(this));
         },
 
-        onAfterRendering: function(){
+        onAfterRendering: function () {
             oController = this;
         },
-        
+
         onSelectItem: function (oEvent) {
-			let sKey = oEvent.getParameter("item").getKey();
+            let sKey = oEvent.getParameter("item").getKey();
             let oToolPage = this.byId("toolPage");
 
-            if(sKey === 'E'){
+            if (sKey === 'E') {
                 //expandir o ocultar menu
                 let bSideExpanded = oToolPage.getSideExpanded();
                 oToolPage.setSideExpanded(!bSideExpanded);
             } else {
                 //"navegar" a tab seleccionado
-			    this.byId("pageContainer").to(this.getView().createId(sKey));
+                this.byId("pageContainer").to(this.getView().createId(sKey));
                 //se oculta el menu
-                oToolPage.setSideExpanded(false);
-            }
-		},
+                if (sKey !== "I") {
+                    oToolPage.setSideExpanded(false);
+                } else {
+                    oToolPage.setSideExpanded(true);
+                }
 
-        onNavODSDetail: function(oEvent){
+            }
+        },
+
+        onNavODSDetail: function (oEvent) {
+            let vFootPrintUri = "https://my011073.sapbydesign.com/sap/public/testdrive/runtime/run?key=%7bXO%7b8xrR7ks4sFmFK0lssm";
             // let oODSList = this.getModel("ODSModel").getProperty("/ODSList"),
             //     sIdODS = oEvent.getSource().data("idODS"),
             //     oODS = oODSList.find(oElement => oElement.Id === sIdODS);
@@ -61,29 +67,36 @@ sap.ui.define([
             //obtener datos del ODS seleccionado
             let oBindingContext = oEvent.getSource().getBindingContext("ODSModel");
 
-            if(!oBindingContext){
+            if (!oBindingContext) {
                 oBindingContext = oEvent.getSource().getBindingContext();
             }
-                
+
             let oODS = oBindingContext.getObject(),
-            sPath = oBindingContext.getPath();
-            
-            //setear modelo default con el local (quitar esto cuando conecte con un odata)
-            // oController.byId("pageDetalle").setModel(this.getModel("ODSModel")); //se ajustó en el manifest como modelo principal
-            // oController.byId("pageDetalle").bindObject(sPath);
+                sPath = oBindingContext.getPath();
 
-            //modelo local usado para agarrar los cambios que se hagan en configuraciones
-            this.getModel("ODSModelDetail").setData(oODS);
+            if (oODS.Id === "ODS13") {
+                window.open(vFootPrintUri);
+            } else {
 
-            //"navegar" a vista de detalle
-            // oController.byId("pageContainer").to(oController.getView().createId('O'));
-            //ajuste para que funcione deployado en launchpad
-            let sIdPage = this.getView().createId("O");
-            this.byId(sIdPage).bindObject(sPath);
-            this.byId("pageContainer").to(sIdPage);
+
+                //setear modelo default con el local (quitar esto cuando conecte con un odata)
+                // oController.byId("pageDetalle").setModel(this.getModel("ODSModel")); //se ajustó en el manifest como modelo principal
+                // oController.byId("pageDetalle").bindObject(sPath);
+
+                //modelo local usado para agarrar los cambios que se hagan en configuraciones
+                this.getModel("ODSModelDetail").setData(oODS);
+
+                //"navegar" a vista de detalle
+                // oController.byId("pageContainer").to(oController.getView().createId('O'));
+                //ajuste para que funcione deployado en launchpad
+                let sIdPage = this.getView().createId("O");
+                this.byId(sIdPage).bindObject(sPath);
+                this.byId("pageContainer").to(sIdPage);
+
+            }
         },
 
-        onOpenDialogDetail: function(oEvent){
+        onOpenDialogDetail: function (oEvent) {
             let oBindingContext = oEvent.getSource().getBindingContext("ODSModel"),
                 oODS = oBindingContext.getObject(),
                 sPath = oBindingContext.getPath();
@@ -102,31 +115,31 @@ sap.ui.define([
                     oEvent.getSource().destroy();
                 });
 
-                oController._oDialogDetail.setModel(oController.getModel("ODSModelDetail"),"ODSModelDetail");
+                oController._oDialogDetail.setModel(oController.getModel("ODSModelDetail"), "ODSModelDetail");
                 oController._oDialogDetail.bindObject(sPath);
                 oController._oDialogDetail.open();
             });
         },
 
         onCloseDialog: function () {
-			oController._oDialogDetail.close();
-		},
+            oController._oDialogDetail.close();
+        },
 
-        onSave: function(oEvent){
+        onSave: function (oEvent) {
             var oView = this.byId(this.getView().createId("O")),
                 sPathODS = oView.getBindingContext().getPath(),
                 oData = this.getModel("ODSModelDetail").getData();
-            
+
             oView.getModel().setProperty(sPathODS, oData);
             oView.getModel().refresh(true);
 
             MessageToast.show("Datos actualizados exitosamente");
         },
 
-        onChangeSection: function(oEvent){
-            if(oEvent.getParameter("section").getId().includes('CON')){
+        onChangeSection: function (oEvent) {
+            if (oEvent.getParameter("section").getId().includes('CON')) {
                 this.getModel("view").setProperty("/showFooter", true);
-            } else{
+            } else {
                 this.getModel("view").setProperty("/showFooter", false);
             }
         },

@@ -19,9 +19,8 @@
             <tnt:sideContent>
                 <tnt:SideNavigation>
                     <tnt:NavigationList itemSelect="onSelectItem" selectedKey="{view>/selectedMenuItem}">
-                        <tnt:NavigationListItem key="E" icon="sap-icon://menu2"/>
-                        <tnt:NavigationListItem key="I" text="{i18n>menu_inicio}" icon="sap-icon://home"/>
-                        <tnt:NavigationListItem key="C" text="{i18n>menu_compromiso}" icon="sap-icon://decision"/>
+                        <tnt:NavigationListItem key="I" text="{i18n>menu_inicio}" icon="sap-icon://hint"/>
+                        <tnt:NavigationListItem key="C" text="{i18n>menu_compromiso}" icon="sap-icon://globe"/>
                         <tnt:NavigationListItem expanded="false" key="D" text="{i18n>menu_dash}" icon="sap-icon://kpi-corporate-performance">
                             <tnt:NavigationListItem key="ODS4" text="{i18n>ini_btnOSD4}"/>
                             <tnt:NavigationListItem key="ODS5" text="{i18n>ini_btnOSD5}"/>
@@ -31,6 +30,11 @@
                             <tnt:NavigationListItem key="ODS17" text="{i18n>ini_btnOSD17}"/>
                         </tnt:NavigationListItem>
                     </tnt:NavigationList>
+                    <tnt:fixedItem>
+                        <tnt:NavigationList itemSelect="onSelectItem" selectedKey="{view>/selectedMenuItem}">
+                            <tnt:NavigationListItem key="E" icon="sap-icon://menu2"/>
+                        </tnt:NavigationList>
+                    </tnt:fixedItem>
                 </tnt:SideNavigation>
             </tnt:sideContent>
             <tnt:mainContents>

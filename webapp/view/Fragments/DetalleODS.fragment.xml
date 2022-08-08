@@ -16,6 +16,9 @@
 				</snappedHeading>
 
 				<actions>
+                    <m:FlexBox justifyContent="Start" alignItems="Start" width="78%">
+                            <m:Image src="{view>/rootPath}/images/LogoChico.png" width="70%"/>
+                    </m:FlexBox>
                     <m:HBox items="{/ODSList}">
                         <m:items>
                             <m:Button type="Emphasized" text="{Id}" class="sapUiTinyMarginEnd" press="onNavODSDetail">
@@ -33,17 +36,11 @@
 			<m:FlexBox fitContainer="true" alignItems="Center" justifyContent="SpaceBetween">
                 <m:HBox alignItems="Center">
                     <m:Image src="{view>/rootPath}/images/{Id}/IconoInvertido.png" width="10rem"/>
-
                     <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
                         <m:Title titleStyle="H1" text="{titulo}"/>
                         <m:Title titleStyle="H2" text="{subTitulo}"/>
                     </layout:VerticalLayout>
                 </m:HBox>
-
-                <!-- <m:VBox class="sapUiSmallMarginBegin" justifyContent="Center" alignItems="End">
-                    <m:ObjectNumber number="{actRealizadas}" class="sapMObjectNumberLarge" state="Success"/>
-                    <m:ObjectStatus text="Act. realizadas" class="sapMObjectStatusLarge" state="Success"/>
-                </m:VBox> -->
 			</m:FlexBox>
 		</headerContent>
 
